@@ -1,0 +1,7 @@
+@font-face {
+  font-family: "Montserrat Arabic";
+  src: url("../fonts/montserrat-arabic.woff2") format("woff2"),
+    url("../fonts/montserrat-arabic.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
