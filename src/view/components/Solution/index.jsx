@@ -24,7 +24,7 @@ export default function Solution() {
       id="solutions"
       className="flex flex-col w-full mx-auto items-center p-2 mt-10 "
     >
-      <div className="flex items-center gap-5">
+      <div className="flex items-center gap-5 p-2">
         <h1 className="text-white md:text-6xl text-3xl font-semibold">
           Solução do problema
         </h1>
@@ -34,7 +34,7 @@ export default function Solution() {
           animate={inView1 ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 1 }}
         >
-          <Brain size={80} color="#E74490" />
+          <Brain size={80} color="#E74490" className="hidden md:block" />
         </motion.div>
       </div>
       <div className="flex flex-col max-w-[90%] mx-auto mt-10">
