@@ -11,7 +11,7 @@ export default function Iplanner() {
         iplanner
       </motion.h2>
       <motion.img
-        src="/src/view/assets/medicos-grup.png"
+        src="/medicos-grup.png"
         width={800}
         alt="medicos-grup"
         initial={{ opacity: 0 }}
@@ -22,7 +22,7 @@ export default function Iplanner() {
         <div className="flex items-center gap-5">
           <motion.img
             className="hidden sm:block"
-            src="/src/view/assets/icon.svg"
+            src="/icon.svg"
             alt="icon iplanner"
             width={100}
             initial={{ opacity: 0, scale: 0.8 }}

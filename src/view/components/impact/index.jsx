@@ -67,15 +67,15 @@ export default function Impact() {
             </h1>
             <ul className="mt-5">
               <li className="flex gap-2 text-white md:text-2xl text-xl items-start mt-2">
-                <img src="/src/view/assets/vector.svg" width={20} />
+                <img src="/vector.svg" width={20} />
                 Melhoramos o desempenho acadêmico.
               </li>
               <li className="flex gap-2 text-white md:text-2xl text-xl items-start mt-2">
-                <img src="/src/view/assets/vector.svg" width={20} />
+                <img src="/vector.svg" width={20} />
                 Aumentamos as taxas de aprovação em exames e concursos.
               </li>
               <li className="flex gap-2 text-white md:text-2xl text-xl items-start mt-2">
-                <img src="/src/view/assets/vector.svg" width={20} />
+                <img src="/vector.svg" width={20} />
                 Facilitamos a entrada no mercado de trabalho.
               </li>
             </ul>
@@ -92,28 +92,24 @@ export default function Impact() {
             </h1>
             <ul className="mt-5">
               <li className="flex gap-2 text-white text-xl mt-2 items-start">
-                <img src="/src/view/assets/vector.svg" width={20} />
+                <img src="/vector.svg" width={20} />
                 Oferecemos aos professores ferramentas e recursos para melhorar
                 suas aulas.
               </li>
               <li className="flex gap-2 text-white text-xl mt-2 items-start">
-                <img src="/src/view/assets/vector.svg" width={20} />
+                <img src="/vector.svg" width={20} />
                 Auxiliamos as instituições de ensino a desenvolverem programas
                 educacionais mais eficazes.
               </li>
               <li className="flex gap-2 text-white text-xl mt-2 items-start">
-                <img src="/src/view/assets/vector.svg" width={20} />
+                <img src="/vector.svg" width={20} />
                 Contribuímos para a formação de profissionais da saúde mais
                 qualificados e preparados para os desafios do mercado.
               </li>
             </ul>
           </motion.div>
         </div>
-        <img
-          src="/src/view/assets/medico.png"
-          alt="medico"
-          className="hidden md:block"
-        />
+        <img src="/medico.png" alt="medico" className="hidden md:block" />
       </div>
     </div>
   );

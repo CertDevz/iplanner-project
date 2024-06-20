@@ -21,7 +21,7 @@ function Header() {
 
   return (
     <header className="flex items-center justify-between p-5">
-      <img src="/src/view/assets/icon.svg" alt="logo" width={60} />
+      <img src="/icon.svg" alt="logo" width={60} />
 
       <div className="block lg:hidden">
         <button onClick={toggleMenu} className="text-white focus:outline-none">

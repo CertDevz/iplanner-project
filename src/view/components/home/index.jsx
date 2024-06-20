@@ -22,7 +22,7 @@ export default function Home() {
       <div className="flex justify-center md:mt-36">
         <motion.img
           ref={ref1}
-          src="/src/view/assets/oculos-virtual.png"
+          src="/oculos-virtual.png"
           alt=""
           className="relative right-[500px]"
           width={700}
