@@ -15,10 +15,7 @@ export default function Home() {
   const inView5 = useInView(ref5, { triggerOnce: true });
 
   return (
-    <div
-      id="home"
-      className="h-[650px] md:h-[800px] w-full bg-gradient-to-br p-2 -mt-2 bg-white"
-    >
+    <div className="h-[650px] md:h-[800px] w-full bg-gradient-to-br p-2 -mt-2 bg-white">
       <div className="flex justify-center md:mt-36">
         <motion.img
           ref={ref1}

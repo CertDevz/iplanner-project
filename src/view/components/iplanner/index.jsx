@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 export default function Iplanner() {
   return (
-    <div className="sm:flex items-center gap-10 p-2 md:h-[700px]">
+    <div id="home" className="sm:flex items-center gap-10 p-2 md:h-[700px]">
       <motion.h2
         className="text-5xl sm:text-8xl text-white font-medium md:hidden"
         initial={{ opacity: 0, y: -50 }}
