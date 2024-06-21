@@ -1,5 +1,6 @@
 import Solution from "./view/components/Solution";
 import Contact from "./view/components/contact";
+import Footer from "./view/components/footer";
 import Header from "./view/components/header";
 import Home from "./view/components/home";
 import Impact from "./view/components/impact";
@@ -19,6 +20,7 @@ function App() {
       <Introduction />
       <Solution />
       <Contact />
+      <Footer />
     </div>
   );
 }
