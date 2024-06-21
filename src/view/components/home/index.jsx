@@ -17,7 +17,7 @@ export default function Home() {
   return (
     <div
       id="home"
-      className="h-[500px] md:h-[700px] w-full bg-gradient-to-br from-purple-500 to-indigo-900 p-2 -mt-2"
+      className="h-[650px] md:h-[800px] w-full bg-gradient-to-br p-2 -mt-2 bg-white"
     >
       <div className="flex justify-center md:mt-36">
         <motion.img
@@ -34,7 +34,7 @@ export default function Home() {
           <div className="flex flex-col text-center">
             <motion.h1
               ref={ref2}
-              className="md:text-5xl text-3xl text-white font-extrabold"
+              className="md:text-5xl text-3xl text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-indigo-900 font-semibold"
               initial={{ opacity: 0, y: -50 }}
               animate={inView2 ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 1, delay: 0.2 }}
@@ -43,7 +43,7 @@ export default function Home() {
             </motion.h1>
             <motion.span
               ref={ref3}
-              className="md:text-3xl text-xl text-white font-semibold"
+              className="md:text-3xl text-xl  font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-indigo-900"
               initial={{ opacity: 0, y: -50 }}
               animate={inView3 ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 1, delay: 0.2 }}

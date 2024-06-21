@@ -15,42 +15,44 @@ export default function Impact() {
   const inView5 = useInView(ref5, { triggerOnce: true });
 
   return (
-    <div className="mt-16">
+    <div className="mt-16 mb-10 md:mb-0 ">
       <div>
         <motion.span
           ref={ref1}
-          className="bg-pink-600 text-white md:text-2xl text-xl p-2 rounded-sm"
+          className="bg-pink-600 text-white md:text-2xl text-2xl p-2 rounded-md font-bold"
           initial={{ opacity: 0, y: -50 }}
           animate={inView1 ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 1 }}
         >
-          <strong>Essa é a visão da</strong> iplanner!
+          Visão
         </motion.span>
       </div>
       <div className="flex max-w-[90%] mx-auto mt-10">
         <motion.p
           ref={ref2}
-          className="text-white md:text-xl"
+          className="text-white md:text-xl text-lg"
           initial={{ opacity: 0, y: 50 }}
           animate={inView2 ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 1 }}
         >
-          Somos uma <strong>SOLUÇÃO EDUCACIONAL</strong> que está democratizando
-          o acesso à educação de qualidade na Nosso impacto: área da saúde.
-          Através de soluções completas e personalizadas, auxiliamos
-          instituições de ensino, professores e alunos em todas as etapas da
-          formação.
+          Nossa visão é ser a plataforma líder em educação e desenvolvimento de
+          carreira na área da saúde, reconhecida pela excelência em oferecer
+          conteúdos atualizados e relevantes. Aspiramos a criar um ecossistema
+          onde a aprendizagem contínua e o desenvolvimento profissional são
+          facilitados, contribuindo para a formação de profissionais altamente
+          qualificados e preparados para transformar a área da saúde
+          globalmente.
         </motion.p>
       </div>
       <div className="mt-10">
         <motion.span
           ref={ref3}
-          className="bg-pink-600 text-white md:text-2xl text-xl p-2 rounded-sm font-bold"
+          className="bg-pink-600 text-white md:text-2xl text-2xl p-2 rounded-md font-bold"
           initial={{ opacity: 0, y: -50 }}
           animate={inView3 ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 1 }}
         >
-          Nosso impacto:
+          Valores
         </motion.span>
       </div>
       <div className="flex justify-between">
@@ -62,49 +64,56 @@ export default function Impact() {
             animate={inView4 ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 1 }}
           >
-            <h1 className="text-white md:text-2xl text-xl font-semibold">
-              Aumentamos as chances de sucesso dos alunos:
-            </h1>
-            <ul className="mt-5">
-              <li className="flex gap-2 text-white md:text-2xl text-xl items-start mt-2">
-                <img src="/vector.svg" width={20} />
-                Melhoramos o desempenho acadêmico.
+            <ul className=" flex flex-col gap-3 mt-5">
+              <li className="flex gap-2 text-white md:text-xl text-lg items-start mt-2">
+                <img src="/vector.svg" width={20} className="mt-1" />
+                <p>
+                  <strong>Acessibilidade:</strong> Compromisso em tornar a
+                  educação de qualidade acessível a todos, independentemente de
+                  localização ou situação financeira.
+                </p>
               </li>
-              <li className="flex gap-2 text-white md:text-2xl text-xl items-start mt-2">
-                <img src="/vector.svg" width={20} />
-                Aumentamos as taxas de aprovação em exames e concursos.
+              <li className="flex gap-2 text-white md:text-xl text-lg items-start mt-2">
+                <img src="/vector.svg" width={20} className="mt-1" />
+                <p>
+                  <strong>Inovação:</strong> Promoção de uma cultura de inovação
+                  contínua, buscando sempre novas formas de ensinar e aprender.
+                </p>
               </li>
-              <li className="flex gap-2 text-white md:text-2xl text-xl items-start mt-2">
-                <img src="/vector.svg" width={20} />
-                Facilitamos a entrada no mercado de trabalho.
+              <li className="flex gap-2 text-white md:text-xl text-lg items-start mt-2">
+                <img src="/vector.svg" width={20} className="mt-1" />
+                <p>
+                  <strong>Excelência:</strong> Dedicação à excelência em todos
+                  os aspectos, desde o conteúdo oferecido até o suporte ao
+                  usuário.
+                </p>
               </li>
-            </ul>
-          </motion.div>
-          <motion.div
-            ref={ref5}
-            className="flex max-w-[90%] mx-auto mt-10 flex-col mb-5 md:mb-0"
-            initial={{ opacity: 0, y: 50 }}
-            animate={inView5 ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 1 }}
-          >
-            <h1 className="text-white text-2xl font-semibold">
-              Aprimoramos a qualidade da educação na área da saúde:
-            </h1>
-            <ul className="mt-5">
-              <li className="flex gap-2 text-white text-xl mt-2 items-start">
-                <img src="/vector.svg" width={20} />
-                Oferecemos aos professores ferramentas e recursos para melhorar
-                suas aulas.
+              <li className="flex gap-2 text-white md:text-xl text-lg items-start mt-2">
+                <img src="/vector.svg" width={20} className="mt-1" />
+                <p>
+                  <strong>Colaboração:</strong> Valorização do trabalho em
+                  equipe e da colaboração entre profissionais, acadêmicos e
+                  instituições para alcançar objetivos comuns.
+                </p>
               </li>
-              <li className="flex gap-2 text-white text-xl mt-2 items-start">
-                <img src="/vector.svg" width={20} />
-                Auxiliamos as instituições de ensino a desenvolverem programas
-                educacionais mais eficazes.
+              <li className="flex gap-2 text-white md:text-xl text-lg items-start mt-2">
+                <img src="/vector.svg" width={20} className="mt-1" />
+                <p>
+                  <strong>Atualização Contínua:</strong> Encorajamento ao
+                  aprendizado contínuo e à atualização constante de
+                  conhecimentos para se manter à frente das mudanças e avanços
+                  na área da saúde.Encorajamento ao aprendizado contínuo e à
+                  atualização constante de conhecimentos para se manter à frente
+                  das mudanças e avanços na área da saúde.
+                </p>
               </li>
-              <li className="flex gap-2 text-white text-xl mt-2 items-start">
-                <img src="/vector.svg" width={20} />
-                Contribuímos para a formação de profissionais da saúde mais
-                qualificados e preparados para os desafios do mercado.
+              <li className="flex gap-2 text-white md:text-xl text-lg items-start mt-2">
+                <img src="/vector.svg" width={20} className="mt-1" />
+                <p>
+                  <strong>Integridade:</strong> Compromisso com a ética,
+                  transparência e honestidade em todas as nossas ações e
+                  interações.
+                </p>
               </li>
             </ul>
           </motion.div>

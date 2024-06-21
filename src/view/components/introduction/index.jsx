@@ -3,27 +3,16 @@ import { motion, useInView } from "framer-motion";
 import { HandHeart, Lightbulb } from "lucide-react";
 
 export default function Introduction() {
-  const ref1 = React.useRef(null);
   const ref2 = React.useRef(null);
   const ref3 = React.useRef(null);
   const ref4 = React.useRef(null);
 
-  const inView1 = useInView(ref1, { triggerOnce: true });
   const inView2 = useInView(ref2, { triggerOnce: true });
   const inView3 = useInView(ref3, { triggerOnce: true });
   const inView4 = useInView(ref4, { triggerOnce: true });
 
   return (
-    <div className="flex flex-col w-full mx-auto items-center bg-gradient-to-br from-purple-800 to-indigo-500 p-2">
-      <motion.h1
-        ref={ref1}
-        className="text-white md:text-6xl text-4xl font-semibold mt-10"
-        initial={{ opacity: 0, y: -50 }}
-        animate={inView1 ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 1 }}
-      >
-        Introdução
-      </motion.h1>
+    <div className="flex flex-col w-full mx-auto items-center bg-gradient-to-br bg-white p-2">
       <div className="flex flex-col max-w-[90%] mx-auto mt-10">
         <div>
           <motion.div
@@ -34,22 +23,30 @@ export default function Introduction() {
             transition={{ duration: 1 }}
           >
             <HandHeart size={40} color="#5FD3F6" />
-            <span className="bg-pink-600 text-white md:text-2xl text-xl p-2 rounded-sm font-bold">
-              Nossa empresa
+            <span className="bg-pink-600 text-white md:text-2xl text-xl p-2 rounded-md font-bold">
+              Sobre Nós
             </span>
           </motion.div>
           <motion.p
             ref={ref3}
-            className="text-white md:text-xl mt-8"
+            className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-indigo-900 md:text-xl mt-8"
             initial={{ opacity: 0, y: 50 }}
             animate={inView3 ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 1 }}
           >
-            A iplanner é uma <strong>SOLUÇÃO EDUCACIONAL</strong> dedicada a
-            democratizar o acesso Nossa empresa à educação de qualidade na área
-            da saúde. Através de soluções inovadoras e eficientes, auxiliamos
-            instituições de ensino, professores e alunos em todas as etapas da
-            jornada educacional.
+            A iplanner surgiu da necessidade identificada de melhorar o acesso à
+            educação e à preparação de carreira em um mundo em constante
+            transformação. Estudos demonstram que muitos profissionais da saúde
+            e acadêmicos enfrentam desafios significativos na atualização de
+            conhecimentos e no desenvolvimento de carreiras. Visando resolver
+            essas lacunas, idealizou-se uma solução que torna a educação mais
+            acessível e abrangente. <br /> <br /> Nosso foco vai além do
+            conteúdo, incluindo a preparação de carreira para acadêmicos e
+            pós-graduandos, bem como a constante atualização dos profissionais
+            da saúde. Com essa visão, a iplanner se dedica a capacitar a próxima
+            geração de líderes e inovadores, fornecendo as ferramentas e
+            recursos necessários para enfrentar os desafios do presente e do
+            futuro na área da saúde
           </motion.p>
         </div>
         <div className="mb-10">
@@ -61,21 +58,23 @@ export default function Introduction() {
             transition={{ duration: 1 }}
           >
             <Lightbulb size={40} color="#5FD3F6" />
-            <span className="bg-pink-600 text-white md:text-2xl text-xl p-2 rounded-sm font-bold">
-              Nossa ideia
+            <span className="bg-pink-600 text-white md:text-2xl text-xl p-2 rounded-md font-bold">
+              Missão
             </span>
           </motion.div>
           <motion.p
-            className="text-white md:text-xl mt-8"
+            className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-indigo-900 md:text-xl mt-8"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
           >
-            Apresentamos uma plataforma integrada que apoia o estudante em todas
-            as etapas de sua trajetória acadêmica e profissional, desde a
-            formação inicial até a gestão de carreira. Nosso portfólio inclui
-            serviços e produtos que potencializam o desenvolvimento contínuo e
-            eficiente.
+            Nossa missão é tornar a educação mais acessível e eficaz, oferecendo
+            ferramentas e recursos que capacitem acadêmicos, pós-graduandos e
+            profissionais da saúde a se atualizarem constantemente e a
+            desenvolverem suas carreiras. Buscamos preencher lacunas no acesso
+            ao conhecimento e na preparação de carreira, preparando líderes e
+            inovadores para enfrentar os desafios do presente e do futuro na
+            área da saúde.
           </motion.p>
         </div>
       </div>

@@ -10,3 +10,57 @@ body {
   background-attachment: fixed;
   font-family: "Montserrat Arabic", sans-serif;
 }
+
+.fixed-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to right, #3d44c7, #000);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to right, #3d44c7, #000);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  transform: translateY(-100%);
+}
+
+.mobile-menu.open {
+  transform: translateY(0);
+}
+
+.mobile-menu ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.mobile-menu li {
+  margin-bottom: 10px;
+}
+
+.mobile-menu li span {
+  cursor: pointer;
+  color: white;
+  font-size: 1.2rem;
+}
+
+.mobile-menu li span:hover {
+  font-weight: bold;
+}
