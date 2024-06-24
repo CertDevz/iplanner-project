@@ -3,10 +3,11 @@ import Contact from "./view/components/contact";
 import Footer from "./view/components/footer";
 import Header from "./view/components/header";
 import Home from "./view/components/home";
-import Impact from "./view/components/impact";
+import Vision from "./view/components/vision";
 import Introduction from "./view/components/introduction";
 import Iplanner from "./view/components/iplanner";
 import "./view/scrollbar.css";
+import Impact from "./view/components/impact";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Iplanner />
         <Home />
       </div>
+      <Vision />
       <Impact />
       <Introduction />
       <Solution />
