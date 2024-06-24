@@ -1,7 +1,10 @@
 import { motion } from "framer-motion";
 export default function Iplanner() {
   return (
-    <div id="home" className="sm:flex items-center gap-10 p-2 md:h-[700px]">
+    <div
+      id="home"
+      className="sm:flex items-center justify-between gap-5 md:h-[850px]"
+    >
       <motion.h2
         className="text-5xl sm:text-8xl text-white font-medium md:hidden"
         initial={{ opacity: 0, y: -50 }}
@@ -10,15 +13,17 @@ export default function Iplanner() {
       >
         iplanner
       </motion.h2>
+
       <motion.img
-        src="/medicos-grup.png"
+        src="/medicos.png"
         width={800}
         alt="medicos-grup"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 0.5 }}
       />
-      <div className="flex flex-col mt-10 sm:mt-0">
+
+      <div className="flex flex-col mt-10 sm:mt-0 flex-1 items-center">
         <div className="flex items-center gap-5">
           <motion.img
             className="hidden sm:block"
@@ -39,7 +44,7 @@ export default function Iplanner() {
           </motion.h1>
         </div>
         <motion.span
-          className="bg-[#e7449045] flex sm:px-3 sm:py-3 text-center p-1 text-white rounded-sm sm:mt-2 font-medium self-end -mt-10"
+          className=" font-semibold cursor-pointer px-5 py-2 bg-[#db2777] rounded-sm text-white justify-end md:mt-20 -mt-10"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 2 }}
