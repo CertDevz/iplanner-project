@@ -5,7 +5,7 @@
 body {
   margin: 0;
   height: 100vh;
-  background: linear-gradient(to right, #3d44c7, #000);
+  background: linear-gradient(to bottom right, #db2777, #3d44c7);
   background-repeat: no-repeat;
   background-attachment: fixed;
   font-family: "Montserrat Arabic", sans-serif;
