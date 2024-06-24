@@ -1,12 +1,13 @@
 import { ChevronDown } from "lucide-react";
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
+import Button from "./components/button";
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMenuOpenMobile, setIsMenuOpenMobile] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isServicesOpen, setIsServicesOpen] = useState(false); // Estado para o menu mobile
-  const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false); // Estado para a div de serviços no desktop
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
 
   const toggleMenuMobile = () => {
     setIsMenuOpenMobile(!isMenuOpenMobile);
@@ -14,7 +15,7 @@ function Header() {
 
   const toggleServices = () => {
     setIsServicesOpen(!isServicesOpen);
-    setIsServicesDropdownOpen(false); // Garante que o dropdown esteja fechado quando clicar para abrir/fechar o menu mobile
+    setIsServicesDropdownOpen(false);
   };
 
   const toggleServicesDropdown = () => {
@@ -53,11 +54,66 @@ function Header() {
   return (
     <>
       <header
-        className={`flex items-center gap-40 md:justify-center justify-between p-2 ${
+        className={`flex items-center gap-40  justify-between p-2 ${
           isScrolled ? "fixed-header" : ""
         }`}
       >
-        <img src="/icon.svg" alt="logo" width={50} />
+        <div className="flex items-center gap-10">
+          <img src="/icon.svg" alt="logo" width={50} />
+
+          <nav
+            className={`lg:flex lg:items-center lg:w-auto ${
+              isMenuOpen ? "block" : "hidden"
+            }`}
+          >
+            <ul className="flex flex-col lg:flex-row lg:gap-3 justify-between text-white lg:cursor-pointer ">
+              <li onClick={() => scrollToSection("home")}>
+                <span className=" font-semibold cursor-pointer px-5 py-2 bg-[#db2777] rounded-sm">
+                  Quem Somos
+                </span>
+              </li>
+
+              <li onClick={() => scrollToSection("solutions")}>
+                <span className="font-semibold cursor-pointer px-5 py-2 bg-[#db2777] rounded-sm">
+                  Para quem
+                </span>
+              </li>
+              <li
+                onMouseEnter={toggleServicesDropdown}
+                onMouseLeave={toggleServicesDropdown}
+                className="relative"
+              >
+                <span className="font-semibold cursor-pointer px-5 py-2 bg-[#db2777] rounded-sm">
+                  Soluções
+                  <ChevronDown
+                    className={`ml-1 inline-block w-4 h-4 transform ${
+                      isServicesDropdownOpen ? "rotate-180" : ""
+                    }`}
+                  />
+                </span>
+
+                {isServicesDropdownOpen && (
+                  <div className="absolute bg-gradient-to-br rounded-sm from-purple-800 to-indigo-500 w-[500px] text-white p-2 shadow-lg z-50">
+                    <span>Gestão de Eventos</span>
+                  </div>
+                )}
+              </li>
+              <li onClick={() => scrollToSection("contact")}>
+                <span className="font-semibold cursor-pointer px-5 py-2 bg-[#db2777] rounded-sm">
+                  Eventos
+                </span>
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+        <div className=" hidden lg:block">
+          <Button
+            text="Criar seu evento"
+            onClick={() => scrollToSection("create-event")}
+          />
+          <Button text="Login" className="ml-5" />
+        </div>
 
         <div className="block lg:hidden">
           <button
@@ -90,85 +146,47 @@ function Header() {
           </button>
         </div>
 
-        <nav
-          className={`lg:flex lg:items-center lg:w-auto ${
-            isMenuOpen ? "block" : "hidden"
-          }`}
-        >
-          <ul className="flex flex-col lg:flex-row lg:gap-3 justify-between text-white lg:cursor-pointer w-[500px]">
-            <li
-              onMouseEnter={toggleServicesDropdown}
-              onMouseLeave={toggleServicesDropdown}
-              className="relative"
-            >
-              <span className="hover:font-bold lg:hover:font-normal cursor-pointer">
+        <div className={`mobile-menu ${isMenuOpenMobile ? "open" : ""}`}>
+          <ul>
+            <li onClick={() => scrollToSection("home")}>
+              <span>Início</span>
+            </li>
+            <li onClick={() => scrollToSection("solutions")}>
+              <span>Soluções</span>
+            </li>
+            <li onClick={() => scrollToSection("contact")}>
+              <span>Contato</span>
+            </li>
+
+            <li onClick={toggleServices} className="relative cursor-pointer">
+              <span className="hover:font-bold lg:hover:font-normal">
                 Serviços
                 <ChevronDown
                   className={`ml-1 inline-block w-4 h-4 transform ${
-                    isServicesDropdownOpen ? "rotate-180" : ""
+                    isServicesOpen ? "rotate-180" : ""
                   }`}
                 />
               </span>
 
-              {isServicesDropdownOpen && (
-                <div className="absolute bg-gradient-to-br rounded-md from-purple-800 to-indigo-500 w-[500px] text-white p-2 shadow-lg z-50">
+              {isServicesOpen && (
+                <div className="bg-gradient-to-br from-purple-800 rounded-md to-indigo-500 text-gray-800 p-2 shadow-lg mt-2">
                   <span>Gestão de Eventos</span>
                 </div>
               )}
             </li>
-            <li onClick={() => scrollToSection("home")}>
-              <span className="hover:font-bold lg:hover:font-normal cursor-pointer">
-                Início
-              </span>
-            </li>
 
-            <li onClick={() => scrollToSection("solutions")}>
-              <span className="hover:font-bold lg:hover:font-normal cursor-pointer">
-                Soluções
-              </span>
+            <li>
+              <Button
+                text="Criar seu evento"
+                onClick={() => scrollToSection("create-event")}
+              />
             </li>
-            <li onClick={() => scrollToSection("contact")}>
-              <span className="hover:font-bold lg:hover:font-normal cursor-pointer">
-                Contato
-              </span>
+            <li>
+              <Button text="Login" />
             </li>
           </ul>
-        </nav>
+        </div>
       </header>
-
-      {/* Div do menu mobile */}
-      <div className={`mobile-menu ${isMenuOpenMobile ? "open" : ""}`}>
-        <ul>
-          <li onClick={() => scrollToSection("home")}>
-            <span>Início</span>
-          </li>
-          <li onClick={() => scrollToSection("solutions")}>
-            <span>Soluções</span>
-          </li>
-          <li onClick={() => scrollToSection("contact")}>
-            <span>Contato</span>
-          </li>
-          {/* Botão de Serviços para abrir a lista de serviços */}
-          <li onClick={toggleServices} className="relative cursor-pointer">
-            <span className="hover:font-bold lg:hover:font-normal">
-              Serviços
-              <ChevronDown
-                className={`ml-1 inline-block w-4 h-4 transform ${
-                  isServicesOpen ? "rotate-180" : ""
-                }`}
-              />
-            </span>
-
-            {/* Lista de serviços */}
-            {isServicesOpen && (
-              <div className="bg-gradient-to-br from-purple-800 rounded-md to-indigo-500 text-gray-800 p-2 shadow-lg mt-2">
-                <span>Gestão de Eventos</span>
-                {/* Adicione mais serviços aqui conforme necessário */}
-              </div>
-            )}
-          </li>
-        </ul>
-      </div>
     </>
   );
 }
