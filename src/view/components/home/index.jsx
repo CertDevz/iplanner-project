@@ -21,12 +21,12 @@ export default function Home() {
         backgroundRepeat: "no-repeat",
       }}
     >
-      <div className="flex justify-end md:mt-36">
+      <div className="flex md:justify-end justify-center md:mt-36">
         <div className="z-50 absolute mt-2 md:mt-0">
           <div className="flex flex-col text-center">
             <motion.h1
               ref={ref2}
-              className="md:text-5xl text-3xl  text-white font-semibold"
+              className="md:text-5xl text-3xl text-white font-semibold"
               initial={{ opacity: 0, y: -50 }}
               animate={inView2 ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 1, delay: 0.2 }}
@@ -43,7 +43,7 @@ export default function Home() {
               Acadêmicos e profissionais da saúde:
             </motion.span>
           </div>
-          <div className="flex flex-col md:mt-16 mt-10 gap-4 p-2 w-[1000px]">
+          <div className="flex flex-col md:mt-16 mt-10 gap-4 p-2 md:w-[1000px]">
             <motion.span
               ref={ref4}
               className="bg-pink-600 md:text-2xl text-lg text-white font-semibold p-4 rounded-sm w-full"
