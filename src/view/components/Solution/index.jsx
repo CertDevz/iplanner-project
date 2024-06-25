@@ -35,7 +35,7 @@ export default function Solution() {
           </motion.p>
         </div>
         <div className="flex items-center gap-5 mt-10">
-          <img src="/services/especialist.png" alt="brain" width={70} />
+          <img src="/services/especialist.png" alt="especialist" width={70} />
           <motion.p
             ref={ref2}
             className="text-white md:text-xl tracking-wide"
@@ -49,7 +49,7 @@ export default function Solution() {
           </motion.p>
         </div>
         <div className="flex items-center gap-5 mt-10">
-          <img src="/services/tec.png" alt="brain" width={70} />
+          <img src="/services/tec.png" alt="tec" width={70} />
           <motion.p
             ref={ref2}
             className="text-white md:text-xl tracking-wide"
@@ -64,7 +64,7 @@ export default function Solution() {
           </motion.p>
         </div>
         <div className="flex items-center gap-5 mt-10">
-          <img src="/services/expert.png" alt="brain" width={70} />
+          <img src="/services/expert.png" alt="expert" width={70} />
           <motion.p
             ref={ref2}
             className="text-white md:text-xl tracking-wide"
@@ -78,7 +78,7 @@ export default function Solution() {
           </motion.p>
         </div>
         <div className="flex items-center gap-5 mt-10">
-          <img src="/public/services/suport.png" alt="brain" width={70} />
+          <img src="/services/suport.png" alt="suport" width={70} />
           <motion.p
             ref={ref2}
             className="text-white md:text-xl tracking-wide"
