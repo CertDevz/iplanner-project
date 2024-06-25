@@ -1,10 +1,18 @@
 import {
+  Award,
   Calendar,
   Captions,
   ChevronDown,
   FileBadge2,
   Files,
+  GraduationCap,
+  Landmark,
+  MessagesSquare,
+  Route,
   ShieldCheck,
+  User,
+  Wrench,
+  X,
 } from "lucide-react";
 import { useState, useEffect } from "react";
 import Button from "./components/button";
@@ -107,29 +115,66 @@ function Header() {
                 </span>
 
                 {isServicesDropdownOpen && (
-                  <div className="absolute bg-white w-[500px] text-white p-2 shadow-lg z-50 rounded-sm">
-                    <ul className="font-bold flex flex-col gap-2">
-                      <li className="flex items-center gap-2 tracking-wide bg-gradient-to-br from-purple-800 to-indigo-500 text-transparent bg-clip-text">
-                        <Captions color="black" size={15} />
-                        Incrições
-                      </li>
-                      <li className="flex items-center gap-2 tracking-wide bg-gradient-to-br from-purple-800 to-indigo-500 text-transparent bg-clip-text">
-                        <Calendar color="black" size={15} />
-                        Programação
-                      </li>
-                      <li className="flex items-center gap-2 tracking-wide bg-gradient-to-br from-purple-800 to-indigo-500 text-transparent bg-clip-text">
-                        <Files color="black" size={15} />
-                        Submissões
-                      </li>
-                      <li className="flex items-center gap-2 tracking-wide bg-gradient-to-br from-purple-800 to-indigo-500 text-transparent bg-clip-text">
-                        <FileBadge2 color="black" size={15} />
-                        Credenciamento
-                      </li>
-                      <li className="flex items-center gap-2 tracking-wide bg-gradient-to-br from-purple-800 to-indigo-500 text-transparent bg-clip-text">
-                        <ShieldCheck color="black" size={15} />
-                        Certificados
-                      </li>
-                    </ul>
+                  <div className="absolute flex items-center gap-5 bg-white w-[500px] text-white p-2 shadow-lg z-50 rounded-sm">
+                    <div>
+                      <ul className="font-bold flex flex-col gap-2">
+                        <li className="flex items-center gap-2 tracking-wide bg-gradient-to-br from-purple-800 to-indigo-500 text-transparent bg-clip-text font-light">
+                          <Captions color="black" size={15} />
+                          Incrições
+                        </li>
+                        <li className="flex items-center gap-2 tracking-wide bg-gradient-to-br from-purple-800 to-indigo-500 text-transparent bg-clip-text font-light">
+                          <Calendar color="black" size={15} />
+                          Programação
+                        </li>
+                        <li className="flex items-center gap-2 tracking-wide bg-gradient-to-br from-purple-800 to-indigo-500 text-transparent bg-clip-text font-light">
+                          <Files color="black" size={15} />
+                          Submissões
+                        </li>
+                        <li className="flex items-center gap-2 tracking-wide bg-gradient-to-br from-purple-800 to-indigo-500 text-transparent bg-clip-text font-light">
+                          <FileBadge2 color="black" size={15} />
+                          Credenciamento
+                        </li>
+                        <li className="flex items-center gap-2 tracking-wide bg-gradient-to-br from-purple-800 to-indigo-500 text-transparent bg-clip-text font-light">
+                          <ShieldCheck color="black" size={15} />
+                          Certificados
+                        </li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h3 className="tracking-wide bg-gradient-to-br from-purple-800 to-indigo-500 text-transparent bg-clip-text font-bold border-b">
+                        Tipos de eventos
+                      </h3>
+                      <ul className="font-bold flex flex-col gap-2 mt-2">
+                        <li className="flex items-center gap-2 tracking-wide bg-gradient-to-br from-purple-800 to-indigo-500 text-transparent bg-clip-text font-light">
+                          <User color="black" size={15} />
+                          Seminário
+                        </li>
+                        <li className="flex items-center gap-2 tracking-wide bg-gradient-to-br from-purple-800 to-indigo-500 text-transparent bg-clip-text font-light">
+                          <Route color="black" size={15} />
+                          Jornada
+                        </li>
+                        <li className="flex items-center gap-2 tracking-wide bg-gradient-to-br from-purple-800 to-indigo-500 text-transparent bg-clip-text font-light">
+                          <Landmark color="black" size={15} />
+                          Congresso
+                        </li>
+                        <li className="flex items-center gap-2 tracking-wide bg-gradient-to-br from-purple-800 to-indigo-500 text-transparent bg-clip-text font-light">
+                          <MessagesSquare color="black" size={15} />
+                          Simpósio
+                        </li>
+                        <li className="flex items-center gap-2 tracking-wide bg-gradient-to-br from-purple-800 to-indigo-500 text-transparent bg-clip-text font-light">
+                          <Wrench color="black" size={15} />
+                          Workshop
+                        </li>
+                        <li className="flex items-center gap-2 tracking-wide bg-gradient-to-br from-purple-800 to-indigo-500 text-transparent bg-clip-text font-light">
+                          <GraduationCap color="black" size={15} />
+                          Curso
+                        </li>
+                        <li className="flex items-center gap-2 tracking-wide bg-gradient-to-br from-purple-800 to-indigo-500 text-transparent bg-clip-text font-light">
+                          <Award ldCheck color="black" size={15} />
+                          Feira
+                        </li>
+                      </ul>
+                    </div>
                   </div>
                 )}
               </li>
@@ -182,6 +227,13 @@ function Header() {
         </div>
 
         <div className={`mobile-menu ${isMenuOpenMobile ? "open" : ""}`}>
+          <button
+            onClick={toggleMenuMobile}
+            className="text-white focus:outline-none mb-10"
+          >
+            <X />
+          </button>
+
           <ul>
             <li onClick={() => redirectToExternalPage("/quem-somos")}>
               <span>Quem Somos</span>
@@ -205,28 +257,65 @@ function Header() {
 
               {isServicesOpen && (
                 <div className="bg-white  p-2 shadow-lg mt-2 rounded-sm">
-                  <ul className="font-bold flex flex-col gap-2">
-                    <li className="flex items-center gap-2 tracking-wide bg-gradient-to-br from-purple-800 to-indigo-500 text-transparent bg-clip-text">
-                      <Captions color="black" size={15} />
-                      Incrições
-                    </li>
-                    <li className="flex items-center gap-2 tracking-wide bg-gradient-to-br from-purple-800 to-indigo-500 text-transparent bg-clip-text">
-                      <Calendar color="black" size={15} />
-                      Programação
-                    </li>
-                    <li className="flex items-center gap-2 tracking-wide bg-gradient-to-br from-purple-800 to-indigo-500 text-transparent bg-clip-text">
-                      <Files color="black" size={15} />
-                      Submissões
-                    </li>
-                    <li className="flex items-center gap-2 tracking-wide bg-gradient-to-br from-purple-800 to-indigo-500 text-transparent bg-clip-text">
-                      <FileBadge2 color="black" size={15} />
-                      Credenciamento
-                    </li>
-                    <li className="flex items-center gap-2 tracking-wide bg-gradient-to-br from-purple-800 to-indigo-500 text-transparent bg-clip-text">
-                      <ShieldCheck color="black" size={15} />
-                      Certificados
-                    </li>
-                  </ul>
+                  <div>
+                    <ul className="font-bold flex flex-col gap-2">
+                      <li className="flex items-center gap-2 tracking-wide bg-gradient-to-br from-purple-800 to-indigo-500 text-transparent bg-clip-text font-light">
+                        <Captions color="black" size={15} />
+                        Incrições
+                      </li>
+                      <li className="flex items-center gap-2 tracking-wide bg-gradient-to-br from-purple-800 to-indigo-500 text-transparent bg-clip-text font-light">
+                        <Calendar color="black" size={15} />
+                        Programação
+                      </li>
+                      <li className="flex items-center gap-2 tracking-wide bg-gradient-to-br from-purple-800 to-indigo-500 text-transparent bg-clip-text font-light">
+                        <Files color="black" size={15} />
+                        Submissões
+                      </li>
+                      <li className="flex items-center gap-2 tracking-wide bg-gradient-to-br from-purple-800 to-indigo-500 text-transparent bg-clip-text font-light">
+                        <FileBadge2 color="black" size={15} />
+                        Credenciamento
+                      </li>
+                      <li className="flex items-center gap-2 tracking-wide bg-gradient-to-br from-purple-800 to-indigo-500 text-transparent bg-clip-text font-light">
+                        <ShieldCheck color="black" size={15} />
+                        Certificados
+                      </li>
+                    </ul>
+                  </div>
+                  <div className="mt-2">
+                    <h3 className="tracking-wide bg-gradient-to-br from-purple-800 to-indigo-500 text-transparent bg-clip-text font-bold border-b mb-2">
+                      Tipos de eventos
+                    </h3>
+                    <ul className="font-bold flex flex-col gap-2 mt-2">
+                      <li className="flex items-center gap-2 tracking-wide bg-gradient-to-br from-purple-800 to-indigo-500 text-transparent bg-clip-text font-light">
+                        <User color="black" size={15} />
+                        Seminário
+                      </li>
+                      <li className="flex items-center gap-2 tracking-wide bg-gradient-to-br from-purple-800 to-indigo-500 text-transparent bg-clip-text font-light">
+                        <Route color="black" size={15} />
+                        Jornada
+                      </li>
+                      <li className="flex items-center gap-2 tracking-wide bg-gradient-to-br from-purple-800 to-indigo-500 text-transparent bg-clip-text font-light">
+                        <Landmark color="black" size={15} />
+                        Congresso
+                      </li>
+                      <li className="flex items-center gap-2 tracking-wide bg-gradient-to-br from-purple-800 to-indigo-500 text-transparent bg-clip-text font-light">
+                        <MessagesSquare color="black" size={15} />
+                        Simpósio
+                      </li>
+                      <li className="flex items-center gap-2 tracking-wide bg-gradient-to-br from-purple-800 to-indigo-500 text-transparent bg-clip-text font-light">
+                        <Wrench color="black" size={15} />
+                        Workshop
+                      </li>
+                      <li className="flex items-center gap-2 tracking-wide bg-gradient-to-br from-purple-800 to-indigo-500 text-transparent bg-clip-text font-light">
+                        <GraduationCap color="black" size={15} />
+                        Curso
+                      </li>
+                      <li className="flex items-center gap-2 tracking-wide bg-gradient-to-br from-purple-800 to-indigo-500 text-transparent bg-clip-text font-light">
+                        <Award ldCheck color="black" size={15} />
+                        Feira
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               )}
             </li>
