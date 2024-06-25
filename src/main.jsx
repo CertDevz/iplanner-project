@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
 import App from "./App";
 import WeAre from "./view/components/weare";
+import Constructor from "./view/components/constructor";
 
 const router = createBrowserRouter([
   {
@@ -13,6 +14,10 @@ const router = createBrowserRouter([
   {
     path: "/quem-somos",
     element: <WeAre />,
+  },
+  {
+    path: "/constructor",
+    element: <Constructor />,
   },
 ]);
 

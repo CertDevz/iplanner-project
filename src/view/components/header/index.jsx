@@ -188,11 +188,15 @@ function Header() {
         </div>
 
         <div className=" hidden lg:block">
-          <Button
-            text="Criar seu evento"
-            onClick={() => scrollToSection("create-event")}
-          />
-          <Button text="Login" className="ml-5" />
+          <Link to="/constructor">
+            <Button
+              text="Criar seu evento"
+              onClick={() => scrollToSection("/constructor")}
+            />
+          </Link>
+          <Link to="/constructor">
+            <Button text="Login" className="ml-5" />
+          </Link>
         </div>
 
         <div className="block lg:hidden">
@@ -320,15 +324,15 @@ function Header() {
               )}
             </li>
 
-            <li>
+            <Link to="/constructor">
               <Button
                 text="Criar seu evento"
                 onClick={() => scrollToSection("create-event")}
               />
-            </li>
-            <li>
+            </Link>
+            <Link to="/constructor">
               <Button text="Login" />
-            </li>
+            </Link>
           </ul>
         </div>
       </header>
