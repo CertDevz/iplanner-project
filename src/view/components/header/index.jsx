@@ -1,4 +1,11 @@
-import { ChevronDown } from "lucide-react";
+import {
+  Calendar,
+  Captions,
+  ChevronDown,
+  FileBadge2,
+  Files,
+  ShieldCheck,
+} from "lucide-react";
 import { useState, useEffect } from "react";
 import Button from "./components/button";
 import { Link } from "react-router-dom";
@@ -100,12 +107,33 @@ function Header() {
                 </span>
 
                 {isServicesDropdownOpen && (
-                  <div className="absolute bg-gradient-to-br rounded-sm from-purple-800 to-indigo-500 w-[500px] text-white p-2 shadow-lg z-50">
-                    <span>Gestão de Eventos</span>
+                  <div className="absolute bg-white w-[500px] text-white p-2 shadow-lg z-50 rounded-sm">
+                    <ul className="font-bold flex flex-col gap-2">
+                      <li className="flex items-center gap-2 tracking-wide bg-gradient-to-br from-purple-800 to-indigo-500 text-transparent bg-clip-text">
+                        <Captions color="black" size={15} />
+                        Incrições
+                      </li>
+                      <li className="flex items-center gap-2 tracking-wide bg-gradient-to-br from-purple-800 to-indigo-500 text-transparent bg-clip-text">
+                        <Calendar color="black" size={15} />
+                        Programação
+                      </li>
+                      <li className="flex items-center gap-2 tracking-wide bg-gradient-to-br from-purple-800 to-indigo-500 text-transparent bg-clip-text">
+                        <Files color="black" size={15} />
+                        Submissões
+                      </li>
+                      <li className="flex items-center gap-2 tracking-wide bg-gradient-to-br from-purple-800 to-indigo-500 text-transparent bg-clip-text">
+                        <FileBadge2 color="black" size={15} />
+                        Credenciamento
+                      </li>
+                      <li className="flex items-center gap-2 tracking-wide bg-gradient-to-br from-purple-800 to-indigo-500 text-transparent bg-clip-text">
+                        <ShieldCheck color="black" size={15} />
+                        Certificados
+                      </li>
+                    </ul>
                   </div>
                 )}
               </li>
-              <li onClick={() => scrollToSection("contact")}>
+              <li onClick={() => scrollToSection("events")}>
                 <span className="font-semibold cursor-pointer px-5 py-2 bg-[#db2777] rounded-sm">
                   Eventos
                 </span>
@@ -156,13 +184,13 @@ function Header() {
         <div className={`mobile-menu ${isMenuOpenMobile ? "open" : ""}`}>
           <ul>
             <li onClick={() => redirectToExternalPage("/quem-somos")}>
-              <span>Início</span>
+              <span>Quem Somos</span>
             </li>
             <li onClick={() => scrollToSection("solutions")}>
-              <span>Soluções</span>
+              <span>Para quem</span>
             </li>
-            <li onClick={() => scrollToSection("contact")}>
-              <span>Contato</span>
+            <li onClick={() => scrollToSection("events")}>
+              <span>Eventos</span>
             </li>
 
             <li onClick={toggleServices} className="relative cursor-pointer">
@@ -176,8 +204,29 @@ function Header() {
               </span>
 
               {isServicesOpen && (
-                <div className="bg-gradient-to-br from-purple-800 rounded-md to-indigo-500 text-gray-800 p-2 shadow-lg mt-2">
-                  <span>Gestão de Eventos</span>
+                <div className="bg-white  p-2 shadow-lg mt-2 rounded-sm">
+                  <ul className="font-bold flex flex-col gap-2">
+                    <li className="flex items-center gap-2 tracking-wide bg-gradient-to-br from-purple-800 to-indigo-500 text-transparent bg-clip-text">
+                      <Captions color="black" size={15} />
+                      Incrições
+                    </li>
+                    <li className="flex items-center gap-2 tracking-wide bg-gradient-to-br from-purple-800 to-indigo-500 text-transparent bg-clip-text">
+                      <Calendar color="black" size={15} />
+                      Programação
+                    </li>
+                    <li className="flex items-center gap-2 tracking-wide bg-gradient-to-br from-purple-800 to-indigo-500 text-transparent bg-clip-text">
+                      <Files color="black" size={15} />
+                      Submissões
+                    </li>
+                    <li className="flex items-center gap-2 tracking-wide bg-gradient-to-br from-purple-800 to-indigo-500 text-transparent bg-clip-text">
+                      <FileBadge2 color="black" size={15} />
+                      Credenciamento
+                    </li>
+                    <li className="flex items-center gap-2 tracking-wide bg-gradient-to-br from-purple-800 to-indigo-500 text-transparent bg-clip-text">
+                      <ShieldCheck color="black" size={15} />
+                      Certificados
+                    </li>
+                  </ul>
                 </div>
               )}
             </li>

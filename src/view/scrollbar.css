@@ -6,7 +6,6 @@
   background-color: #888;
 }
 
-/* Estilo do botão de rolagem (seta) */
 ::-webkit-scrollbar-thumb {
   background-color: #e74490;
   border-radius: 4px;
