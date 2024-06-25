@@ -8,6 +8,8 @@ import Introduction from "./view/components/introduction";
 import Iplanner from "./view/components/iplanner";
 import "./view/scrollbar.css";
 import Impact from "./view/components/impact";
+import Events from "./view/components/events";
+import EventsFree from "./view/components/events-free";
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
       <Impact />
       <Introduction />
       <Solution />
+      <Events />
+      <EventsFree />
       <Contact />
       <Footer />
     </div>
