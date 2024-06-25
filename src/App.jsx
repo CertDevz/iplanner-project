@@ -10,6 +10,7 @@ import "./view/scrollbar.css";
 import Impact from "./view/components/impact";
 import Events from "./view/components/events";
 import EventsFree from "./view/components/events-free";
+import Tables from "./view/components/tables";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
       <Solution />
       <Events />
       <EventsFree />
+      <Tables />
       <Contact />
       <Footer />
     </div>
