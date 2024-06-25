@@ -3,7 +3,7 @@ export default function Iplanner() {
   return (
     <div
       id="home"
-      className="sm:flex items-center justify-between gap-5 md:h-[750px]"
+      className="sm:flex items-center justify-between gap-5 md:h-[550px]"
     >
       <motion.h2
         className="text-6xl  font-medium md:hidden bg-gradient-to-br from-purple-800 to-indigo-500 text-transparent bg-clip-text mt-5"
@@ -15,8 +15,8 @@ export default function Iplanner() {
       </motion.h2>
 
       <motion.img
-        src="/medicos.png"
-        width={800}
+        src="/medicos-home.png"
+        width={700}
         alt="medicos-grup"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

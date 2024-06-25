@@ -30,7 +30,11 @@ export default function Impact() {
           </p>
         </div>
       </div>
-      <img src="/public/medica.png" alt="medica" className="hidden md:block" />
+      <img
+        src="/public/medica-ideia.png"
+        alt="medica"
+        className="hidden md:block"
+      />
     </div>
   );
 }

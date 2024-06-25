@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -36,8 +36,8 @@ const ContactForm = () => {
   };
 
   return (
-    <div id="contact" className="flex w-full mx-auto bg-white p-2">
-      <div className="md:w-[500px] mb-10  mx-auto bg-white p-8 rounded-xl shadow-md mt-10 bg-gradient-to-br from-purple-800 to-indigo-500">
+    <div id="contact" className="flex w-full mx-auto p-2">
+      <div className="md:w-[650px] mb-10  mx-auto bg-white p-8 rounded-xl shadow-md mt-10 bg-gradient-to-br from-purple-800 to-indigo-500">
         <h2 className="text-2xl font-bold mb-6 text-white">Entre em Contato</h2>
         <form onSubmit={handleSubmit}>
           <div className="mb-4">

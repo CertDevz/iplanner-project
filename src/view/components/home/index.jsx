@@ -14,7 +14,7 @@ export default function Home() {
 
   return (
     <div
-      className="h-[650px] md:h-[800px]  bg-gradient-to-br p-2 -mt-2 bg-white "
+      className="h-[650px] md:h-[800px]  bg-gradient-to-br p-2 -mt-20 bg-white "
       style={{
         backgroundImage: 'url("/public/image-home.jpg")',
         backgroundSize: "cover",

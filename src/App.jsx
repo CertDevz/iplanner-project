@@ -12,6 +12,7 @@ import Events from "./view/components/events";
 import EventsFree from "./view/components/events-free";
 import Tables from "./view/components/tables";
 import CarouselCourses from "./view/components/courses";
+import PageEnd from "./view/components/page-end";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
       <Tables />
       <CarouselCourses />
       <Contact />
+      <PageEnd />
       <Footer />
     </div>
   );
