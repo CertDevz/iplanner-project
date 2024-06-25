@@ -11,6 +11,7 @@ import Impact from "./view/components/impact";
 import Events from "./view/components/events";
 import EventsFree from "./view/components/events-free";
 import Tables from "./view/components/tables";
+import CarouselCourses from "./view/components/courses";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
       <Events />
       <EventsFree />
       <Tables />
+      <CarouselCourses />
       <Contact />
       <Footer />
     </div>
