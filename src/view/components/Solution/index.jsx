@@ -20,7 +20,7 @@ export default function Solution() {
           Serviço de Gestão de Eventos Completo para a iplanner
         </h1>
         <div className="flex items-center gap-5 mt-10">
-          <img src="/public/services/brain.png" alt="brain" width={70} />
+          <img src="/services/brain.png" alt="brain" width={70} />
           <motion.p
             ref={ref2}
             className="text-white md:text-xl tracking-wide"
@@ -35,7 +35,7 @@ export default function Solution() {
           </motion.p>
         </div>
         <div className="flex items-center gap-5 mt-10">
-          <img src="/public/services/especialist.png" alt="brain" width={70} />
+          <img src="/services/especialist.png" alt="brain" width={70} />
           <motion.p
             ref={ref2}
             className="text-white md:text-xl tracking-wide"
@@ -49,7 +49,7 @@ export default function Solution() {
           </motion.p>
         </div>
         <div className="flex items-center gap-5 mt-10">
-          <img src="/public/services/tec.png" alt="brain" width={70} />
+          <img src="/services/tec.png" alt="brain" width={70} />
           <motion.p
             ref={ref2}
             className="text-white md:text-xl tracking-wide"
@@ -64,7 +64,7 @@ export default function Solution() {
           </motion.p>
         </div>
         <div className="flex items-center gap-5 mt-10">
-          <img src="/public/services/expert.png" alt="brain" width={70} />
+          <img src="/services/expert.png" alt="brain" width={70} />
           <motion.p
             ref={ref2}
             className="text-white md:text-xl tracking-wide"
@@ -78,7 +78,7 @@ export default function Solution() {
           </motion.p>
         </div>
         <div className="flex items-center gap-5 mt-10">
-          <img src="/public/services/suport.png" alt="brain" width={70} />
+          <img src="/services/suport.png" alt="brain" width={70} />
           <motion.p
             ref={ref2}
             className="text-white md:text-xl tracking-wide"

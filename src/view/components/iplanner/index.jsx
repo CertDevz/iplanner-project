@@ -6,7 +6,7 @@ export default function Iplanner() {
       className="sm:flex items-center justify-between gap-5 md:h-[550px]"
     >
       <motion.h2
-        className="text-6xl  font-medium md:hidden bg-gradient-to-br from-purple-800 to-indigo-500 text-transparent bg-clip-text mt-5"
+        className="text-6xl  font-medium md:hidden bg-gradient-to-br from-purple-800 to-indigo-500 text-transparent bg-clip-text mt-5 p-2"
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}

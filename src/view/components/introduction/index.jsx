@@ -1,10 +1,10 @@
 export default function Impact() {
   return (
-    <div className="flex flex-col md:flex-row justify-between md:gap-40 mt-10 md:mt-0 ">
+    <div className="flex flex-col md:flex-row justify-between md:gap-40 mt-10 mb-10 md:mb-0 md:mt-0 ">
       <div className=" flex flex-col md:items-center justify-center flex-1  md:mb-0">
         <div className="flex flex-col md:flex-row items-center gap-10 justify-center">
           <img
-            src="/public/light.png"
+            src="/light.png"
             alt="light"
             className="md:w-[140px] w-[100px]"
           />
