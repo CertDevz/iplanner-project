@@ -1,6 +1,7 @@
 import { ChevronDown } from "lucide-react";
 import { useState, useEffect } from "react";
 import Button from "./components/button";
+import { Link } from "react-router-dom";
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -35,6 +36,10 @@ function Header() {
     }
   };
 
+  const redirectToExternalPage = (url) => {
+    window.location.href = url;
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 0) {
@@ -59,7 +64,9 @@ function Header() {
         } bg-gradient-to-br from-purple-800 to-indigo-500`}
       >
         <div className="flex items-center gap-10">
-          <img src="/icon.svg" alt="logo" width={50} />
+          <Link to="/">
+            <img src="/icon.svg" alt="logo" width={50} />
+          </Link>
 
           <nav
             className={`lg:flex lg:items-center lg:w-auto ${
@@ -67,11 +74,11 @@ function Header() {
             }`}
           >
             <ul className="flex flex-col lg:flex-row lg:gap-3 justify-between text-white lg:cursor-pointer ">
-              <li onClick={() => scrollToSection("home")}>
-                <span className=" font-semibold cursor-pointer px-5 py-2 bg-[#db2777] rounded-sm">
+              <Link to="/quem-somos">
+                <span className="font-semibold cursor-pointer px-5 py-2 bg-[#db2777] rounded-sm">
                   Quem Somos
                 </span>
-              </li>
+              </Link>
 
               <li onClick={() => scrollToSection("solutions")}>
                 <span className="font-semibold cursor-pointer px-5 py-2 bg-[#db2777] rounded-sm">
@@ -148,7 +155,7 @@ function Header() {
 
         <div className={`mobile-menu ${isMenuOpenMobile ? "open" : ""}`}>
           <ul>
-            <li onClick={() => scrollToSection("home")}>
+            <li onClick={() => redirectToExternalPage("/quem-somos")}>
               <span>Início</span>
             </li>
             <li onClick={() => scrollToSection("solutions")}>
