@@ -1,9 +1,15 @@
 export default function Impact() {
   return (
-    <div className="flex flex-col md:flex-row justify-between md:gap-40">
+    <div
+      className="flex flex-col md:flex-row justify-between md:gap-40 "
+      style={{
+        background:
+          "linear-gradient(to bottom right, #7c3aed 20%, #3d44c7 100%)",
+      }}
+    >
       <img src="/public/medica.png" alt="medica" className="hidden md:block" />
       <div className=" flex flex-col md:items-start justify-center flex-1 mb-10 md:mb-0">
-        <h1 className="font-semibold cursor-pointer px-20 py-2 bg-[#db2777] rounded-sm text-white text-center md:text-3xl text-2xl">
+        <h1 className="font-semibold  px-20 py-2 bg-[#db2777] rounded-sm text-white text-center md:text-3xl text-2xl">
           Nosso Impacto
         </h1>
         <div className="mt-10 flex flex-col">

@@ -54,9 +54,9 @@ function Header() {
   return (
     <>
       <header
-        className={`flex items-center gap-40  justify-between p-2 ${
+        className={`flex items-center gap-40 justify-between p-2 ${
           isScrolled ? "fixed-header" : ""
-        }`}
+        } bg-gradient-to-br from-purple-800 to-indigo-500`}
       >
         <div className="flex items-center gap-10">
           <img src="/icon.svg" alt="logo" width={50} />

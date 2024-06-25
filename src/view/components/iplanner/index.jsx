@@ -3,10 +3,10 @@ export default function Iplanner() {
   return (
     <div
       id="home"
-      className="sm:flex items-center justify-between gap-5 md:h-[850px]"
+      className="sm:flex items-center justify-between gap-5 md:h-[750px]"
     >
       <motion.h2
-        className="text-5xl sm:text-8xl text-white font-medium md:hidden"
+        className="text-6xl  font-medium md:hidden bg-gradient-to-br from-purple-800 to-indigo-500 text-transparent bg-clip-text mt-5"
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
@@ -35,7 +35,7 @@ export default function Iplanner() {
             transition={{ duration: 1, delay: 1 }}
           />
           <motion.h1
-            className=" text-5xl sm:text-8xl text-white font-medium hidden sm:block"
+            className="text-5xl sm:text-9xl font-medium hidden sm:block bg-gradient-to-br from-purple-800 to-indigo-500 text-transparent bg-clip-text"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 1.5 }}
@@ -44,7 +44,7 @@ export default function Iplanner() {
           </motion.h1>
         </div>
         <motion.span
-          className=" font-semibold cursor-pointer px-5 py-2 bg-[#db2777] rounded-sm text-white justify-end md:mt-20 -mt-10"
+          className=" font-semibold  px-5 py-2 bg-[#db2777] rounded-sm text-white justify-end md:mt-20 -mt-10"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 2 }}
