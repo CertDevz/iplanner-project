@@ -78,7 +78,7 @@ export default function Solution() {
           </motion.p>
         </div>
         <div className="flex items-center gap-5 mt-10">
-          <img src="/services/suport.png" alt="brain" width={70} />
+          <img src="/public/services/suport.png" alt="brain" width={70} />
           <motion.p
             ref={ref2}
             className="text-white md:text-xl tracking-wide"
