@@ -14,7 +14,7 @@ export default function Vision() {
         </h1>
         <motion.p
           ref={ref2}
-          className="text-white md:text-2xl md:mt-10 max-w-[600px] text-center mt-5"
+          className="text-white md:text-2xl md:mt-10 max-w-[600px] text-center mt-5 tracking-wide"
           initial={{ opacity: 0, y: 50 }}
           animate={inView2 ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 1 }}

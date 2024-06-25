@@ -13,15 +13,21 @@ export default function Impact() {
           <ul className="mt-2 max-w-[90%] mx-auto">
             <li className="flex gap-2 text-white md:text-xl text-lg items-start mt-2">
               <img src="/vector.svg" width={17} className="mt-1" />
-              <p>Melhoramos o desempenho acadêmico.</p>
+              <p className="tracking-wide">
+                Melhoramos o desempenho acadêmico.
+              </p>
             </li>
             <li className="flex gap-2 text-white md:text-xl text-lg items-start mt-2">
               <img src="/vector.svg" width={17} className="mt-1" />
-              <p>Aumentamos as taxas de aprovação em exames e concursos .</p>
+              <p className="tracking-wide">
+                Aumentamos as taxas de aprovação em exames e concursos .
+              </p>
             </li>
             <li className="flex gap-2 text-white md:text-xl text-lg items-start mt-2">
               <img src="/vector.svg" width={17} className="mt-1" />
-              <p>Facilitamos a entrada no mercado de trabalho.</p>
+              <p className="tracking-wide">
+                Facilitamos a entrada no mercado de trabalho.
+              </p>
             </li>
           </ul>
         </div>
@@ -32,21 +38,21 @@ export default function Impact() {
           <ul className="mt-2 max-w-[90%] mx-auto">
             <li className="flex gap-2 text-white md:text-xl text-lg items-start mt-2">
               <img src="/vector.svg" width={17} className="mt-1" />
-              <p>
+              <p className="tracking-wide">
                 Oferecemos aos professores ferramentas e recursos para melhorar
                 suas aulas.
               </p>
             </li>
             <li className="flex gap-2 text-white md:text-xl text-lg items-start mt-2">
               <img src="/vector.svg" width={17} className="mt-1" />
-              <p>
+              <p className="tracking-wide">
                 Auxiliamos as instituições de ensino a desenvolverem programas
                 educacionais mais eficazes.
               </p>
             </li>
             <li className="flex gap-2 text-white md:text-xl text-lg items-start mt-2">
               <img src="/vector.svg" width={17} className="mt-1" />
-              <p>
+              <p className="tracking-wide">
                 Contribuímos para a formação de profissionais da saúde mais
                 qualificados e preparados para os desafios do mercado.
               </p>
