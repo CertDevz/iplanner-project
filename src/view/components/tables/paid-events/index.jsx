@@ -1,57 +1,8 @@
 import { useState } from "react";
+import { dados } from "./mock";
 
 export default function TablePaid() {
-  const [dados] = useState([
-    {
-      funcionalidade: "Gestão de inscrição",
-      descricao: "Permite aos organizadores gerenciar incrições",
-      limitacao: "Incluída",
-      custo: "Grátis",
-    },
-    {
-      funcionalidade: "Capacidade máxima",
-      descricao: "Número máximo de participantes",
-      limitacao: "Até 50 participantes",
-      custo: "Grátis",
-    },
-    {
-      funcionalidade: "Personalização de site",
-      descricao: "Criação de uma página dedicada ao evento",
-      limitacao: "Incluída",
-      custo: "Grátis",
-    },
-    {
-      funcionalidade: "Tempo de recebimento de fundos",
-      descricao: "Tempo para recebimento dos pagamentos",
-      limitacao: "2 dias",
-      custo: "-",
-    },
-    {
-      funcionalidade: "Transmissão ao vivo",
-      descricao: "Plataforma de streaming para eventos",
-      limitacao: "Até 300 parcipantes",
-      custo: "Grátis",
-    },
-    {
-      funcionalidade: "Ferramente da e-mail",
-      descricao: "Envio de e-mails para participantes",
-      limitacao: "Até 10 envios",
-      custo: "Grátis",
-    },
-    {
-      funcionalidade: "Atividade e worksshops",
-      descricao: "Incrição para atividades específicas",
-      limitacao: "Incluída",
-      custo: "Grátis",
-    },
-    {
-      funcionalidade: "Submissão de trabalhos",
-      descricao: "Envio e avaliação de trabalhos acadêmicos",
-      limitacao: "Incluída",
-      custo: "Grátis",
-    },
-  ]);
-
+  const [tablePaidEvents] = useState(dados);
   return (
     <div className="p-10 ">
       <div className="overflow-x-auto">
@@ -77,7 +28,7 @@ export default function TablePaid() {
             </tr>
           </thead>
           <tbody>
-            {dados.map((linha, index) => (
+            {tablePaidEvents.map((linha, index) => (
               <tr key={index} className={index % 2 === 0 ? "bg-gray-100" : ""}>
                 <td className="border border-gray-300 px-4 py-2">
                   {linha.funcionalidade}
