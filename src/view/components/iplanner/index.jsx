@@ -19,7 +19,7 @@ export default function Iplanner() {
         <motion.img
           src="/medicos-home.png"
           alt="medicos-grup"
-          className="object-cover w-full max-w-[200vw] md:max-w-[1000px] -mt-15 h-screen md:h-[100%] "
+          className="object-cover w-full max-w-[200vw] md:max-w-[1100px] md:mt-40 h-screen md:h-[100%]"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.5 }}
