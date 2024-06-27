@@ -48,7 +48,7 @@ export default function Iplanner() {
           </motion.h1>
         </div>
         <motion.span
-          className=" font-semibold text-center text-xl  px-5 py-2 bg-[#db2777] rounded-sm text-white md:mt-20 -mt-10 "
+          className=" hidden md:block font-semibold text-center text-xl  px-5 py-2 bg-[#db2777] rounded-sm text-white md:mt-20 -mt-10 "
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 2 }}
