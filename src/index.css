@@ -6,10 +6,24 @@ body {
   margin: 0;
   height: 100vh;
   background: linear-gradient(to bottom right, #f3e3ff 20%, #d6d0ff 100%);
-
   background-repeat: no-repeat;
   background-attachment: fixed;
-  font-family: "Montserrat Arabic", sans-serif;
+}
+
+@font-face {
+  font-family: "Antipasto Pro";
+  font-display: swap;
+  src: url("/fonts/antipasto.regular.ttf");
+  font-style: normal;
+  font-weight: 300;
+}
+
+#title-iplanner {
+  font-family: "Antipasto Pro", sans-serif;
+}
+
+#title-iplanner2 {
+  font-family: "Antipasto Pro", sans-serif;
 }
 
 .fixed-header {
@@ -18,7 +32,7 @@ body {
   left: 0;
   right: 0;
   background: linear-gradient(to bottom right, #7c3aed 20%, #3d44c7 100%);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   z-index: 1000;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
