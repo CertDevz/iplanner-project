@@ -3,7 +3,7 @@ import Card from "./components/card";
 export default function EventsFree() {
   return (
     <div
-      className="flex flex-col md:flex-row justify-center"
+      className="flex flex-col md:flex-row justify-center h-screen items-center"
       style={{
         background:
           "linear-gradient(to bottom right, #7c3aed 20%, #3d44c7 100%)",

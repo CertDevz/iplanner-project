@@ -36,7 +36,11 @@ function Header() {
       <header
         className={`flex items-center gap-40 justify-between p-2 ${
           isScrolled ? "fixed-header" : ""
-        } bg-gradient-to-br from-purple-800 to-indigo-500`}
+        }`}
+        style={{
+          background:
+            "linear-gradient(to bottom right, #7c3aed 20%, #3d44c7 100%)",
+        }}
       >
         <div className="flex items-center gap-10">
           <Link to="/">

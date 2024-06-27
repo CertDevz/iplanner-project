@@ -5,7 +5,7 @@ export default function Tables() {
   const [tableData] = useState(dados);
 
   return (
-    <div className="p-10">
+    <div className="p-10 ">
       <div className="overflow-x-auto">
         <h1 className="font-bold mb-2">Eventos Gratuitos</h1>
         <table className="table-auto border-collapse border border-gray-300 rounded-md">

@@ -47,7 +47,7 @@ const CarouselCourses = () => {
     >
       <Slider {...settings}>
         {courses.map((course, index) => (
-          <div key={index} className="px-2 max-w-[600px] ">
+          <div key={index} className="px-2 max-w-[600px] h-[350px]">
             <div className="bg-white rounded-lg overflow-hidden shadow-md h-full">
               <img
                 src={course.image}
@@ -55,7 +55,9 @@ const CarouselCourses = () => {
                 className="w-full h-56 object-cover"
               />
               <div className="p-4">
-                <h3 className="text-lg font-semibold mb-2">{course.title}</h3>
+                <h3 className="text-lg font-semibold mb-2 max-w-[400px]">
+                  {course.title}
+                </h3>
                 <p className="text-sm text-gray-600">{course.description}</p>
               </div>
             </div>

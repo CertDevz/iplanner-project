@@ -6,27 +6,29 @@ export default function Home() {
   const ref3 = React.useRef(null);
   const ref4 = React.useRef(null);
   const ref5 = React.useRef(null);
+  const ref6 = React.useRef(null);
 
   const inView2 = useInView(ref2, { triggerOnce: true });
   const inView3 = useInView(ref3, { triggerOnce: true });
   const inView4 = useInView(ref4, { triggerOnce: true });
   const inView5 = useInView(ref5, { triggerOnce: true });
+  const inView6 = useInView(ref6, { triggerOnce: true });
 
   return (
     <div
-      className="h-[650px] md:h-[800px]  bg-gradient-to-br p-2  bg-white "
+      className=" bg-gradient-to-br p-2  bg-white h-screen -mt-12"
       style={{
         backgroundImage: 'url("/image-home.jpg")',
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
       }}
     >
-      <div className="flex md:justify-end justify-center md:mt-36">
+      <div className="flex md:justify-end justify-center md:mt-36 mt-36">
         <div className="z-50 absolute mt-2 md:mt-0">
           <div className="flex flex-col text-center">
             <motion.h1
               ref={ref2}
-              className="md:text-5xl text-3xl text-white font-semibold"
+              className="md:text-5xl text-5xl text-white font-semibold"
               initial={{ opacity: 0, y: -50 }}
               animate={inView2 ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 1, delay: 0.2 }}
@@ -35,7 +37,7 @@ export default function Home() {
             </motion.h1>
             <motion.span
               ref={ref3}
-              className="md:text-3xl text-xl  font-semibold text-white"
+              className="md:text-3xl text-2xl  font-semibold text-white"
               initial={{ opacity: 0, y: -50 }}
               animate={inView3 ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 1, delay: 0.2 }}
@@ -43,10 +45,10 @@ export default function Home() {
               Acadêmicos e profissionais da saúde:
             </motion.span>
           </div>
-          <div className="flex flex-col md:mt-16 mt-10 gap-4 p-2 md:w-[1000px]">
+          <div className="flex flex-col md:mt-16 mt-10 gap-10 p-2 md:w-[1000px]">
             <motion.span
               ref={ref4}
-              className="bg-pink-600 md:text-2xl text-lg text-white font-semibold p-4 rounded-sm w-full"
+              className="bg-pink-600 md:text-2xl text-xl text-white font-semibold p-4 rounded-sm w-full"
               initial={{ opacity: 0, y: 50 }}
               animate={inView4 ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 1, delay: 0.2 }}
@@ -56,7 +58,7 @@ export default function Home() {
             </motion.span>
             <motion.span
               ref={ref5}
-              className="bg-pink-600 md:text-2xl text-lg text-white font-semibold p-4 rounded-sm md:w-2/3"
+              className="bg-pink-600 md:text-2xl text-xl text-white font-semibold p-4 rounded-sm md:w-2/3"
               initial={{ opacity: 0, y: 50 }}
               animate={inView5 ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 1, delay: 0.2 }}
@@ -65,9 +67,10 @@ export default function Home() {
               alcançar seus objetivos mais ambiciosos.
             </motion.span>
             <motion.span
-              className="bg-pink-600 md:text-2xl text-lg text-white font-semibold p-4 rounded-sm md:w-2/4"
+              ref={ref6}
+              className="bg-pink-600 md:text-2xl text-xl text-white font-semibold p-4 rounded-sm md:w-2/4"
               initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
+              animate={inView6 ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 1, delay: 0.2 }}
             >
               03 - Fazem a diferença na vida de seus pacientes e na sociedade
