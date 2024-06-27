@@ -14,7 +14,7 @@ export default function Vision() {
         </h1>
         <motion.p
           ref={ref2}
-          className="text-lg md:mt-10 max-w-[900px] text-center mt-5 tracking-wide bg-gradient-to-br from-purple-800 to-indigo-500 text-transparent bg-clip-text"
+          className="text-lg md:text-2xl md:mt-10 max-w-[900px] text-center mt-5 tracking-wide bg-gradient-to-br from-purple-800 to-indigo-500 text-transparent bg-clip-text"
           initial={{ opacity: 0, y: 50 }}
           animate={inView2 ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 1 }}
