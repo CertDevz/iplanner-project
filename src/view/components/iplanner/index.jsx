@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+
 export default function Iplanner() {
   return (
     <div
@@ -15,18 +16,17 @@ export default function Iplanner() {
         >
           iplanner
         </motion.h2>
-
         <motion.img
           src="/medicos-home.png"
           alt="medicos-grup"
-          className="h-screen object-cover md:max-w-[1250px]"
+          className="object-cover w-full max-w-[200vw] md:max-w-[1000px] mt-40 h-screen md:h-[100%] "
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.5 }}
         />
       </div>
 
-      <div className="flex flex-col items-center ">
+      <div className="flex flex-col items-center p-2">
         <div className="flex items-center gap-5">
           <motion.img
             className="hidden sm:block"
@@ -39,7 +39,7 @@ export default function Iplanner() {
           />
           <motion.h1
             id="title-iplanner"
-            className="text-5xl sm:text-9xl font-medium hidden sm:block bg-gradient-to-br from-purple-800 to-indigo-500 text-transparent bg-clip-text"
+            className="text-4xl lg:text-9xl md:text-7xl font-medium hidden sm:block bg-gradient-to-br from-purple-800 to-indigo-500 text-transparent bg-clip-text"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 1.5 }}
@@ -48,7 +48,7 @@ export default function Iplanner() {
           </motion.h1>
         </div>
         <motion.span
-          className=" hidden md:block font-semibold text-center text-xl  px-5 py-2 bg-[#db2777] rounded-sm text-white md:mt-20 -mt-10 "
+          className="hidden md:block font-semibold text-center text-xl px-5 py-2 bg-[#db2777] rounded-sm text-white md:mt-20 -mt-10"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 2 }}

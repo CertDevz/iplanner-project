@@ -7,7 +7,7 @@ export default function Impact() {
           "linear-gradient(to bottom right, #7c3aed 20%, #3d44c7 100%)",
       }}
     >
-      <img src="/medica.png" alt="medica" className="hidden md:block" />
+      <img src="/enfermeiro.png" alt="medica" className="hidden 2xl:block" />
       <div className=" flex flex-col md:items-start justify-center  mb-10 md:mb-0">
         <h1 className="font-semibold  px-20 py-2 bg-[#db2777] rounded-sm text-white text-center md:text-3xl text-2xl">
           Nosso Impacto

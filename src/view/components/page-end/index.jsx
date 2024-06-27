@@ -1,21 +1,13 @@
 export default function PageEnd() {
   return (
     <div className="w-full overflow-hidden hidden md:block">
-      <div className="relative w-full flex">
+      <div className="relative w-full flex justify-center">
         <img
           src="/medicos-end.png"
           alt="medicos"
-          className="w-full h-auto"
+          className="w-full h-auto object-contain"
           style={{
-            mixBlendMode: "multiply",
-            marginRight: "-10px",
-          }}
-        />
-        <img
-          src="/medicos-end.png"
-          alt="medicos"
-          className="w-full h-auto"
-          style={{
+            maxHeight: "200px",
             mixBlendMode: "multiply",
           }}
         />

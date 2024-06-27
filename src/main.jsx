@@ -21,7 +21,7 @@ const router = createBrowserRouter([
     element: <Constructor />,
   },
   {
-    path: "/page-events",
+    path: "/evento/:eventId/informacoes",
     element: <PageEvents />,
   },
 ]);
