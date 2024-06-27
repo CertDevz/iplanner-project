@@ -23,7 +23,7 @@ export default function Solution() {
 
   return (
     <div
-      className="flex flex-col md:flex-row gap-5 mb-0 p-2 md:p-0 h-screen"
+      className="flex flex-col md:flex-row gap-5 mb-0 p-2 md:p-0 md:h-screen"
       style={{
         background:
           "linear-gradient(to bottom right, #7c3aed 20%, #3d44c7 100%)",
