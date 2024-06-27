@@ -36,7 +36,7 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="flex w-full mx-auto p-2">
+    <div className="flex items-center w-full mx-auto p-2">
       <div className="md:w-[650px] mb-10  mx-auto bg-white p-8 rounded-xl shadow-md mt-10 bg-gradient-to-br from-purple-800 to-indigo-500">
         <h2 className="text-2xl font-bold mb-6 text-white">Entre em Contato</h2>
         <form onSubmit={handleSubmit}>
@@ -99,6 +99,11 @@ const ContactForm = () => {
           </button>
         </form>
       </div>
+      <img
+        src="/enfermeiro3.png"
+        alt=""
+        className="max-w-[650px] hidden lg:block"
+      />
     </div>
   );
 };

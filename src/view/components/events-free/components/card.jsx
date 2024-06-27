@@ -2,9 +2,9 @@ export default function Card({ title, subtitle, items }) {
   return (
     <div className="p-10">
       <div
-        className="max-w-[300px] rounded-md p-5 h-[300px] bg-gradient-to-br from-f3e3ff via-transparent to-d6d0ff"
+        className="md:w-[500px] rounded-md p-5 max-h-[300px]"
         style={{
-          boxShadow: "5px 5px 10px rgba(0, 0, 0, 0.9)",
+          boxShadow: "5px 5px 10px rgba(0, 0, 0, 0.8)",
           background:
             "linear-gradient(to bottom right, #f3e3ff 20%, #d6d0ff 100%)",
         }}
