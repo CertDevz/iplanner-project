@@ -3,7 +3,7 @@ import Card from "./components/card";
 export default function EventsFree() {
   return (
     <div
-      className="flex justify-around items-center "
+      className="flex justify-center items-center "
       style={{
         background:
           "linear-gradient(to bottom right, #7c3aed 20%, #3d44c7 100%)",
@@ -34,7 +34,7 @@ export default function EventsFree() {
       <img
         src="/enfermeira-cirurgia.png"
         alt=""
-        className="max-w-[1100px] hidden xl:block"
+        className="max-w-[1000px] hidden xl:block"
       />
     </div>
   );
