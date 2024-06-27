@@ -16,19 +16,19 @@ export default function Home() {
 
   return (
     <div
-      className=" bg-gradient-to-br p-2  bg-white h-screen -mt-12"
+      className=" bg-gradient-to-br p-2  bg-white h-screen -mt-12 "
       style={{
         backgroundImage: 'url("/image-home.jpg")',
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
       }}
     >
-      <div className="flex md:justify-end justify-center md:mt-36 mt-36">
+      <div className="flex md:justify-end justify-center md:mt-36 mt-20 ">
         <div className="z-50 absolute mt-2 md:mt-0">
           <div className="flex flex-col text-center">
             <motion.h1
               ref={ref2}
-              className="md:text-5xl text-5xl text-white font-semibold"
+              className="md:text-5xl text-4xl text-white font-semibold"
               initial={{ opacity: 0, y: -50 }}
               animate={inView2 ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 1, delay: 0.2 }}
@@ -37,7 +37,7 @@ export default function Home() {
             </motion.h1>
             <motion.span
               ref={ref3}
-              className="md:text-3xl text-2xl  font-semibold text-white"
+              className="md:text-3xl text-xl  font-semibold text-white"
               initial={{ opacity: 0, y: -50 }}
               animate={inView3 ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 1, delay: 0.2 }}
@@ -45,7 +45,7 @@ export default function Home() {
               Acadêmicos e profissionais da saúde:
             </motion.span>
           </div>
-          <div className="flex flex-col md:mt-16 mt-10 gap-10 p-2 md:w-[1000px]">
+          <div className="flex flex-col md:mt-16 mt-5 gap-10 p-2 md:w-[1000px]">
             <motion.span
               ref={ref4}
               className="bg-pink-600 md:text-2xl text-xl text-white font-semibold p-4 rounded-sm w-full"

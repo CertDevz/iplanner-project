@@ -1,7 +1,7 @@
 export default function Impact() {
   return (
     <div
-      className="flex flex-col md:flex-row justify-between md:gap-40 h-screen mt-14 md:mt-0"
+      className="flex flex-col md:flex-row justify-between md:gap-40 md:h-screen -mt-12 md:mt-0"
       style={{
         background:
           "linear-gradient(to bottom right, #7c3aed 20%, #3d44c7 100%)",
