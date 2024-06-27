@@ -31,7 +31,6 @@ function App() {
       <Tables />
       <CarouselCourses />
       <Contact />
-
       <PageEnd />
       <Footer />
     </div>

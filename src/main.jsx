@@ -5,6 +5,7 @@ import "./index.css";
 import App from "./App";
 import WeAre from "./view/components/weare";
 import Constructor from "./view/components/constructor";
+import PageEvents from "./view/components/page-events";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
   {
     path: "/constructor",
     element: <Constructor />,
+  },
+  {
+    path: "/page-events",
+    element: <PageEvents />,
   },
 ]);
 

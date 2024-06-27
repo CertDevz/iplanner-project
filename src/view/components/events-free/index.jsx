@@ -17,7 +17,6 @@ export default function EventsFree() {
           "Participantes limitados (50 participantes)",
           "Importação de Participantes Site Personalizado",
           "E-mails limitados",
-          "Gestão das formas de pagamento",
         ]}
       />
       <Card
@@ -27,6 +26,7 @@ export default function EventsFree() {
           "Inclusão de Todos os Benefícios Gratuitos",
           "Taxa de Serviço de 8,5% por Inscrição",
           "Emissão de certificados Sem Limites",
+          "Gestão das formas de pagamento",
         ]}
       />
     </div>
