@@ -34,7 +34,7 @@ export default function EventsFree() {
       <img
         src="/enfermeira-cirurgia.png"
         alt=""
-        className="max-w-[1000px] hidden xl:block"
+        className="max-w-[700px] hidden xl:block object-contain md:mt-40"
       />
     </div>
   );

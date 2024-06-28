@@ -19,7 +19,7 @@ export default function Iplanner() {
         <motion.img
           src="/medicos-home.png"
           alt="medicos-grup"
-          className="object-cover w-full md:max-w-[1000px] md:mt-40 h-screen md:h-[100%]"
+          className="object-cover w-full md:max-w-[980px] md:mt-40 h-screen md:h-[100%]"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.5 }}
@@ -39,7 +39,7 @@ export default function Iplanner() {
           />
           <motion.h1
             id="title-iplanner"
-            className="text-4xl lg:text-9xl md:text-7xl font-medium hidden sm:block bg-gradient-to-br from-purple-800 to-indigo-500 text-transparent bg-clip-text"
+            className="text-4xl 2xl:text-9xl md:text-8xl font-medium hidden sm:block bg-gradient-to-br from-purple-800 to-indigo-500 text-transparent bg-clip-text"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 1.5 }}
