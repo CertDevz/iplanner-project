@@ -4,7 +4,7 @@ export default function Iplanner() {
   return (
     <div
       id="home"
-      className="flex flex-col md:flex-row items-center justify-center gap-5 h-screen "
+      className="flex flex-col md:flex-row items-center justify-center gap-5 md:h-screen -mt-[370px] md:mt-0"
     >
       <div className="flex flex-col items-center">
         <motion.h2
@@ -19,7 +19,7 @@ export default function Iplanner() {
         <motion.img
           src="/medicos-home.png"
           alt="medicos-grup"
-          className="object-cover w-full max-w-[200vw] md:max-w-[1100px] md:mt-40 h-screen md:h-[100%]"
+          className="object-cover w-full md:max-w-[1000px] md:mt-40 h-screen md:h-[100%]"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.5 }}

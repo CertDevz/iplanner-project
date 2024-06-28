@@ -34,7 +34,7 @@ function Header() {
   return (
     <>
       <header
-        className={`flex items-center gap-40 justify-between p-2 ${
+        className={`flex items-center gap-40 justify-between p-1 md:p-2 ${
           isScrolled ? "fixed-header" : ""
         }`}
         style={{
@@ -44,7 +44,7 @@ function Header() {
       >
         <div className="flex items-center gap-10">
           <Link to="/">
-            <img src="/icon.svg" alt="logo" width={50} />
+            <img src="/icon.svg" alt="logo" width={45} />
           </Link>
 
           <nav
