@@ -4,7 +4,7 @@ export default function Iplanner() {
   return (
     <div
       id="home"
-      className="flex flex-col md:flex-row items-center justify-center gap-5 md:h-screen -mt-[370px] md:mt-0"
+      className="flex flex-col md:flex-row items-center justify-center gap-5 md:h-screen -mt-[300px] md:mt-0"
     >
       <div className="flex flex-col items-center">
         <motion.h2

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import "../../../index.css";
 
 export function useHeader() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -52,6 +53,14 @@ export function useHeader() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  useEffect(() => {
+    if (isMenuOpenMobile) {
+      document.body.classList.add("no-scroll");
+    } else {
+      document.body.classList.remove("no-scroll");
+    }
+  }, [isMenuOpenMobile]);
 
   return {
     redirectToExternalPage,

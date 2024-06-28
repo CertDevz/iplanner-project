@@ -7,6 +7,7 @@ import {
   Files,
   GraduationCap,
   Landmark,
+  Menu,
   MessagesSquare,
   Route,
   ShieldCheck,
@@ -21,7 +22,6 @@ import { useHeader } from "../hooks/useHeader";
 function Header() {
   const {
     isMenuOpen,
-    isScrolled,
     redirectToExternalPage,
     scrollToSection,
     toggleMenuMobile,
@@ -31,12 +31,11 @@ function Header() {
     isServicesDropdownOpen,
     isMenuOpenMobile,
   } = useHeader();
+
   return (
     <>
       <header
-        className={`flex items-center gap-40 justify-between p-1 md:p-2 ${
-          isScrolled ? "fixed-header" : ""
-        }`}
+        className={`flex items-center gap-40 justify-between p-2  fixed-header`}
         style={{
           background:
             "linear-gradient(to bottom right, #7c3aed 20%, #3d44c7 100%)",
@@ -151,7 +150,7 @@ function Header() {
           </nav>
         </div>
 
-        <div className=" hidden lg:block">
+        <div className="hidden lg:block">
           <Link to="/constructor">
             <Button
               text="Criar seu evento"
@@ -168,29 +167,17 @@ function Header() {
             onClick={toggleMenuMobile}
             className="text-white focus:outline-none"
           >
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              {isMenuOpenMobile ? (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              ) : (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4 6h16M4 12h16m-7 6h7"
-                />
-              )}
-            </svg>
+            <Menu />
+            {isMenuOpenMobile ? (
+              ""
+            ) : (
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M4 6h16M4 12h16m-7 6h7"
+              />
+            )}
           </button>
         </div>
 
@@ -224,7 +211,7 @@ function Header() {
               </span>
 
               {isServicesOpen && (
-                <div className="bg-white  p-2 shadow-lg mt-2 rounded-sm">
+                <div className="bg-white p-2 shadow-lg mt-2 rounded-sm">
                   <div>
                     <ul className="font-bold flex flex-col gap-2">
                       <li className="flex items-center gap-2 tracking-wide bg-gradient-to-br from-purple-800 to-indigo-500 text-transparent bg-clip-text font-light">
