@@ -10,7 +10,7 @@ export default function Vision() {
     <div className="flex flex-col items-center justify-center md:flex-row gap-5 md:mt-16 mb-20 md:mb-0 md:h-screen">
       <div className="flex flex-col max-w-[900px] mx-auto mt-10 items-center">
         <h1 className="font-semibold px-5 py-2 bg-[#db2777] rounded-sm text-white  md:text-5xl text-2xl mt-10">
-          Essa é a visão da iplanner!
+          Essa é a visão da <span id="title-iplanner">iplanner</span>!
         </h1>
         <motion.p
           ref={ref2}
