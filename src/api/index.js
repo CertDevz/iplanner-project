@@ -1,5 +1,5 @@
-import axios from 'axios';
+import axios from "axios";
 
-axios.defaults.baseURL = 'http://localhost:3333';
+axios.defaults.baseURL = "https://iplanner-api.onrender.com/";
 
 export const api = axios;
