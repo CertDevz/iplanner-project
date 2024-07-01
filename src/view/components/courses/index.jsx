@@ -1,17 +1,15 @@
-import { useState, useEffect } from 'react';
-import Slider from 'react-slick';
-import axios from 'axios';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
-import { courses } from './mock';
-import { api } from '../../../api';
+import { useState, useEffect } from "react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import { courses } from "./mock";
+import { api } from "../../../api";
 
 const CarouselCourses = () => {
   const [cursos, setCursos] = useState([]);
   useEffect(() => {
     const request = async () => {
-      const { data: response } = await api.get('/cursos');
-
+      const { data: response } = await api.get("/cursos");
       setCursos([...courses, ...response]);
     };
 
@@ -56,7 +54,7 @@ const CarouselCourses = () => {
       className="w-full md:p-10 p-5"
       style={{
         background:
-          'linear-gradient(to bottom right, #7c3aed 20%, #3d44c7 100%)',
+          "linear-gradient(to bottom right, #7c3aed 20%, #3d44c7 100%)",
       }}
     >
       <Slider {...settings}>

@@ -1,5 +1,3 @@
-// src/components/CourseMock.js
-
 export const courses = [
   {
     image: "/courses/carreira.jpeg",

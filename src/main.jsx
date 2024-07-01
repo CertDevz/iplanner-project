@@ -6,6 +6,7 @@ import App from "./App";
 import WeAre from "./view/components/weare";
 import Constructor from "./view/components/constructor";
 import PageEvents from "./view/components/page-events";
+import ParaQuem from "./view/components/para-quem";
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
   {
     path: "/evento/:id/informacoes",
     element: <PageEvents />,
+  },
+  {
+    path: "/para-quem",
+    element: <ParaQuem />,
   },
 ]);
 
