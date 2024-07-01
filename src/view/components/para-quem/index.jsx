@@ -24,7 +24,7 @@ export default function ParaQuem() {
           </div>
           <div className="mt-10 flex flex-col p-2">
             <h2 className=" text-xl font-semibold">
-              Acadêmicos e Pós-graduandos
+              Acadêmicos e Pós-graduandos:
             </h2>
             <ul className="mt-5 max-w-[90%] mx-auto flex flex-col gap-7">
               <li className="flex gap-2  md:text-xl text-lg items-start mt-2">
