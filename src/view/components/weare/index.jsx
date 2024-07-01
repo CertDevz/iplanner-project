@@ -6,6 +6,8 @@ export default function WeAre() {
   return (
     <div>
       <Header />
+      <br />
+      <br />
 
       <div className="flex max-w[90%] mx-auto mt-10">
         <h1 className="font-semibold  px-20 py-2 bg-[#db2777] rounded-sm text-white  md:text-3xl text-2xl">
