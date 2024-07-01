@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import "../../../index.css";
+import { useEffect, useState } from 'react';
+import '../../../index.css';
 
 export function useHeader() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -29,8 +29,14 @@ export function useHeader() {
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+      element.scrollIntoView({ behavior: 'smooth' });
       closeMenu();
+      window.addEventListener('load', () => {
+        if (window.location.hash) {
+          const id = window.location.hash.substring(1);
+          scrollToSection(id);
+        }
+      });
     }
   };
 
@@ -47,18 +53,18 @@ export function useHeader() {
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
   useEffect(() => {
     if (isMenuOpenMobile) {
-      document.body.classList.add("no-scroll");
+      document.body.classList.add('no-scroll');
     } else {
-      document.body.classList.remove("no-scroll");
+      document.body.classList.remove('no-scroll');
     }
   }, [isMenuOpenMobile]);
 

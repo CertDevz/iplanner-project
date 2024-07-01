@@ -1,8 +1,9 @@
-import { Construction } from "lucide-react";
-import Header from "../header";
-import Footer from "../footer";
+import { Construction } from 'lucide-react';
+import Header from '../header';
+import Footer from '../footer';
 
 export default function ConstructionPage() {
+  const iplanner = <span id="title-iplanner">iplanner</span>;
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
@@ -22,8 +23,8 @@ export default function ConstructionPage() {
           </p>
 
           <p className="text-lg text-gray-800 mt-4">
-            A iplanner surgiu da necessidade identificada de melhorar o acesso à
-            educação e à preparação de carreira em um mundo em constante
+            A {iplanner} surgiu da necessidade identificada de melhorar o acesso
+            à educação e à preparação de carreira em um mundo em constante
             transformação. Estudos demonstram que muitos profissionais da saúde
             e acadêmicos enfrentam desafios significativos na atualização de
             conhecimentos e no desenvolvimento de carreiras. Visando resolver
@@ -31,8 +32,8 @@ export default function ConstructionPage() {
             acessível e abrangente. Nosso foco vai além do conteúdo, incluindo a
             preparação de carreira para acadêmicos e pós-graduandos, bem como a
             constante atualização dos profissionais da saúde. Com essa visão, a
-            iplanner se dedica a capacitar a próxima geração de líderes e
-            inovadores, fornecendo as ferramentas e recursos necessários para
+            &nbsp;{iplanner} se dedica a capacitar a próxima geração de líderes
+            e inovadores, fornecendo as ferramentas e recursos necessários para
             enfrentar os desafios do presente e do futuro na área da saúde.
           </p>
         </div>

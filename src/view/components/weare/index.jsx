@@ -1,7 +1,8 @@
-import Footer from "../footer";
-import Header from "../header";
+import Footer from '../footer';
+import Header from '../header';
 
 export default function WeAre() {
+  const iplanner = <span id="title-iplanner">iplanner</span>;
   return (
     <div>
       <Header />
@@ -17,15 +18,15 @@ export default function WeAre() {
           className="w-full"
           style={{
             background:
-              "linear-gradient(to bottom right, #7c3aed 20%, #3d44c7 100%)",
+              'linear-gradient(to bottom right, #7c3aed 20%, #3d44c7 100%)',
           }}
         >
           <h2 className="font-bold text-lg text-white bg-[#db2777] inline-block px-2 py-1 rounded-sm">
             Sobre Nós
           </h2>
           <p className="text-xl tracking-wide bg-gradient-to-br text-white mt-2 p-5">
-            A iplanner surgiu da necessidade identificada de melhorar o acesso à
-            educação e à preparação de carreira em um mundo em constante
+            A {iplanner} surgiu da necessidade identificada de melhorar o acesso
+            à educação e à preparação de carreira em um mundo em constante
             transformação. Estudos demonstram que muitos profissionais da saúde
             e acadêmicos enfrentam desafios significativos na atualização de
             conhecimentos e no desenvolvimento de carreiras. Visando resolver
@@ -33,7 +34,7 @@ export default function WeAre() {
             acessível e abrangente. Nosso foco vai além do conteúdo, incluindo a
             preparação de carreira para acadêmicos e pós-graduandos, bem como a
             constante atualização dos profissionais da saúde. Com essa visão, a
-            iplanner se dedica a capacitar a próxima geração de líderes e
+            &nbsp;{iplanner} se dedica a capacitar a próxima geração de líderes e
             inovadores, fornecendo as ferramentas e recursos necessários para
             enfrentar os desafios do presente e do futuro na área da saúde.
           </p>
@@ -56,7 +57,7 @@ export default function WeAre() {
           className="w-full "
           style={{
             background:
-              "linear-gradient(to bottom right, #7c3aed 20%, #3d44c7 100%)",
+              'linear-gradient(to bottom right, #7c3aed 20%, #3d44c7 100%)',
           }}
         >
           <h2 className="font-bold text-lg text-white bg-[#db2777] inline-block px-2 py-1 rounded-sm">

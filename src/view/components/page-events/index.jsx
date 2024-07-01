@@ -1,16 +1,30 @@
-import { Calendar, MapPin } from "lucide-react";
-import Footer from "../footer";
-import Counter from "./components/counter";
-import MapContainer from "./components/map-container";
-import useStore from "../../../store/useCount";
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import { Calendar, MapPin } from 'lucide-react';
+import Footer from '../footer';
+import Counter from './components/counter';
+import MapContainer from './components/map-container';
+import useStore from '../../../store/useCount';
+import { api } from '../../../api';
 
 export default function PageEvents() {
+  const params = useParams();
+  const [event, setEvent] = useState({});
+  useEffect(() => {
+    const find = async () => {
+      const { data } = await api.get(`/curso/${params.id}`);
+      setEvent(data);
+    };
+
+    find();
+  }, [params.id]);
+
   const count = useStore((state) => state.count);
   return (
     <div>
       <div className="mb-10">
         <img
-          src="/evento-banner.jpeg"
+          src={event.backgroundImage}
           alt="banner do evento"
           className="w-full  filter brightness-75"
         />
@@ -18,10 +32,10 @@ export default function PageEvents() {
         <div className="md:max-w-[70%] mx-auto p-5">
           <div className="flex flex-col justify-center mt-5 items-center">
             <h1 className="md:text-5xl text-3xl bg-gradient-to-br from-purple-800 to-indigo-500 text-transparent bg-clip-text font-bold text-center md:text-start">
-              INOVEDUCA 2024 (Palestras Avulsas)
+              {event.title}
             </h1>
             <span className="text-center mt-5 text-2xl bg-gradient-to-br from-purple-900 to-indigo-300 text-transparent bg-clip-text">
-              Conferência Inovação Educacional 2024 da Alta Paulista
+              {event.descriptionEvent}
             </span>
             <button className="font-semibold cursor-pointer px-8 py-3 bg-[#db2777] rounded-sm text-white mt-5 hover:bg-[#a1255d]">
               Faça sua incrição
@@ -33,16 +47,14 @@ export default function PageEvents() {
               className="flex flex-col md:flex-row items-center gap-5 md:px-14 md:py-10 rounded-md p-5"
               style={{
                 background:
-                  "linear-gradient(to bottom right, #7c3aed 20%, #3d44c7 100%)",
+                  'linear-gradient(to bottom right, #7c3aed 20%, #3d44c7 100%)',
               }}
             >
               <div className="border-2 bg-gradient-to-r from-purple-800 to-indigo-500 p-2 rounded-full">
                 <Calendar size={50} color="white" />
               </div>
               <div className="flex flex-col">
-                <span className="font-bold text-white">
-                  De 27 a 28 de junho
-                </span>
+                <span className="font-bold text-white">{event.date}</span>
                 <span className="text-white">Confira a programação</span>
               </div>
             </div>
@@ -50,14 +62,14 @@ export default function PageEvents() {
               className="flex flex-col md:flex-row items-center gap-5 md:px-14 md:py-10 rounded-md p-5"
               style={{
                 background:
-                  "linear-gradient(to bottom right, #7c3aed 20%, #3d44c7 100%)",
+                  'linear-gradient(to bottom right, #7c3aed 20%, #3d44c7 100%)',
               }}
             >
               <div className="border-2 bg-gradient-to-r from-purple-800 to-indigo-500 p-2 rounded-full">
                 <MapPin size={50} color="white" />
               </div>
               <div className="flex flex-col">
-                <span className="font-bold text-white">Pompéia, SP</span>
+                <span className="font-bold text-white">{event.local}</span>
                 <span className="text-white">Avenida Shunji Nishimura</span>
               </div>
             </div>
@@ -124,16 +136,16 @@ export default function PageEvents() {
           <div
             className="flex flex-col gap-7 justify-center mt-20 bg-white shadow-lg p-6 rounded-md"
             style={{
-              backgroundColor: "rgba(243, 227, 255, 0.95)",
-              boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
+              backgroundColor: 'rgba(243, 227, 255, 0.95)',
+              boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
             }}
           >
             <div
               className="flex flex-col lg:flex-row justify-between items-center px-4 py-5"
               style={{
                 background:
-                  "linear-gradient(to bottom right, #f3e3ff 20%, #d6d0ff 100%)",
-                boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
+                  'linear-gradient(to bottom right, #f3e3ff 20%, #d6d0ff 100%)',
+                boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
               }}
             >
               <div>
@@ -159,8 +171,8 @@ export default function PageEvents() {
               className="flex flex-col lg:flex-row justify-between items-center px-4 py-5"
               style={{
                 background:
-                  "linear-gradient(to bottom right, #f3e3ff 20%, #d6d0ff 100%)",
-                boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
+                  'linear-gradient(to bottom right, #f3e3ff 20%, #d6d0ff 100%)',
+                boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
               }}
             >
               <div>
@@ -186,8 +198,8 @@ export default function PageEvents() {
               className="flex flex-col lg:flex-row justify-between items-center px-4 py-5"
               style={{
                 background:
-                  "linear-gradient(to bottom right, #f3e3ff 20%, #d6d0ff 100%)",
-                boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
+                  'linear-gradient(to bottom right, #f3e3ff 20%, #d6d0ff 100%)',
+                boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
               }}
             >
               <div>
@@ -213,8 +225,8 @@ export default function PageEvents() {
               className="flex flex-col px-4 py-5 max-w-[450px]"
               style={{
                 background:
-                  "linear-gradient(to bottom right, #f3e3ff 20%, #d6d0ff 100%)",
-                boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
+                  'linear-gradient(to bottom right, #f3e3ff 20%, #d6d0ff 100%)',
+                boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
               }}
             >
               <span className="bg-gradient-to-br from-purple-400 to-indigo-500 text-transparent bg-clip-text font-bold">

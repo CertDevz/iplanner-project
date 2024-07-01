@@ -34,7 +34,7 @@ export default function Solution() {
       <img src="/enfermeiro2.png" alt="" className="hidden md:block" />
       <div className="flex flex-col max-w-[900px] mx-auto md:mt-10 items-center mb-10">
         <h1 className="font-semibold px-5 py-2 bg-[#db2777] rounded-sm text-white text-center md:text-3xl text-2xl -mt-2 md:mt-0">
-          Serviço de Gestão de Eventos Completo para a iplanner
+          Serviço de Gestão de Eventos Completo para a <span id="title-iplanner">iplanner</span>
         </h1>
         {solutionData.map((item, index) => (
           <Section

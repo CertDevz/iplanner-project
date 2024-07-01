@@ -1,9 +1,23 @@
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import { courses } from "./mock";
+import { useState, useEffect } from 'react';
+import Slider from 'react-slick';
+import axios from 'axios';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import { courses } from './mock';
+import { api } from '../../../api';
 
 const CarouselCourses = () => {
+  const [cursos, setCursos] = useState([]);
+  useEffect(() => {
+    const request = async () => {
+      const { data: response } = await api.get('/cursos');
+
+      setCursos([...courses, ...response]);
+    };
+
+    request();
+  }, []);
+
   const settings = {
     dots: true,
     infinite: true,
@@ -42,11 +56,11 @@ const CarouselCourses = () => {
       className="w-full md:p-10 p-5"
       style={{
         background:
-          "linear-gradient(to bottom right, #7c3aed 20%, #3d44c7 100%)",
+          'linear-gradient(to bottom right, #7c3aed 20%, #3d44c7 100%)',
       }}
     >
       <Slider {...settings}>
-        {courses.map((course, index) => (
+        {cursos.map((course, index) => (
           <div key={index} className="px-2 max-w-[600px] h-[350px]">
             <div className="bg-white rounded-lg overflow-hidden shadow-md h-full">
               <img
@@ -55,9 +69,11 @@ const CarouselCourses = () => {
                 className="w-full h-56 object-cover"
               />
               <div className="p-4">
-                <h3 className="text-lg font-semibold mb-2 max-w-[400px]">
-                  {course.title}
-                </h3>
+                <a href={`/evento/${course.id}/informacoes`}>
+                  <h3 className="text-lg font-semibold mb-2 max-w-[400px]">
+                    {course.title}
+                  </h3>
+                </a>
                 <p className="text-sm text-gray-600">{course.description}</p>
               </div>
             </div>

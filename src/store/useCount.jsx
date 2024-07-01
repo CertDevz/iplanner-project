@@ -1,5 +1,4 @@
-// store.js
-import create from "zustand";
+import { create } from 'zustand';
 
 const useStore = create((set) => ({
   count: 0,
