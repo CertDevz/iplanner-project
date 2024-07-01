@@ -12,6 +12,7 @@ import Events from "./view/components/events";
 import EventsFree from "./view/components/events-free";
 import Tables from "./view/components/tables";
 import CarouselCourses from "./view/components/courses";
+import ParaQuem from "./view/components/para-quem";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
       <Impact />
       <Introduction />
       <Solution />
+      <ParaQuem />
       <Events />
       <EventsFree />
       <Tables />

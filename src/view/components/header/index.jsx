@@ -58,12 +58,10 @@ function Header() {
                 </span>
               </Link>
 
-              <li onClick={() => scrollToSection("solutions")}>
-                <Link to="/para-quem">
-                  <span className="font-semibold cursor-pointer px-5 py-2 bg-[#db2777] rounded-sm">
-                    Para quem
-                  </span>
-                </Link>
+              <li onClick={() => scrollToSection("para-quem")}>
+                <span className="font-semibold cursor-pointer px-5 py-2 bg-[#db2777] rounded-sm">
+                  Para quem
+                </span>
               </li>
               <li
                 onMouseEnter={toggleServicesDropdown}
@@ -203,10 +201,8 @@ function Header() {
             <li onClick={() => redirectToExternalPage("/quem-somos")}>
               <span>Quem Somos</span>
             </li>
-            <li onClick={() => scrollToSection("solutions")}>
-              <Link to="/para-quem">
-                <span>Para quem</span>
-              </Link>
+            <li onClick={() => scrollToSection("para-quem")}>
+              <span>Para quem</span>
             </li>
             <li onClick={() => scrollToSection("events")}>
               <span>Eventos</span>
