@@ -16,7 +16,7 @@ export default function Home() {
 
   return (
     <div
-      className=" bg-gradient-to-br p-2  bg-white h-screen -mt-12 "
+      className=" bg-gradient-to-br p-2  bg-white h-screen -mt-12"
       style={{
         backgroundImage: 'url("/image-home.jpg")',
         backgroundSize: "cover",
