@@ -7,7 +7,7 @@ export default function ParaQuem() {
       <div className="flex items-center justify-center   bg-gray-100 rounded-lg shadow-2xl mt-24 h-[850px] md:h-full">
         <div className=" flex flex-col md:items-start justify-center  mb-10 md:mb-0">
           <h1 className="font-semibold  px-20 py-2 bg-[#db2777] rounded-sm text-white text-center md:text-3xl text-2xl">
-            Para quem:
+            Para quem
           </h1>
           <div className="mt-10 flex flex-col p-2">
             <h2 className=" text-xl font-semibold">Profissionais da Saúde:</h2>
