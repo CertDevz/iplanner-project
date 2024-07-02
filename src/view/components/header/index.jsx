@@ -203,10 +203,10 @@ function Header() {
             <li onClick={() => redirectToExternalPage("/quem-somos")}>
               <span>Quem Somos</span>
             </li>
-            <li onClick={() => scrollToSection("para-quem")}>
+            <li onClick={() => handleSectionClick("para-quem")}>
               <span>Para quem</span>
             </li>
-            <li onClick={() => scrollToSection("events")}>
+            <li onClick={() => handleSectionClick("events")}>
               <span>Eventos</span>
             </li>
 
