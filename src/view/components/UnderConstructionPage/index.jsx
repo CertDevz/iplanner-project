@@ -1,5 +1,5 @@
 import { Construction } from "lucide-react";
-import Footer from "../Footer";
+import Footer from "../footer";
 import Header from "../header";
 
 export default function UnderConstructionPage() {

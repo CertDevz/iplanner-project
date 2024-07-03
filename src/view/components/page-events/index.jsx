@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Calendar, MapPin } from "lucide-react";
-import Footer from "../Footer";
+import Footer from "../footer";
 import Counter from "./components/counter";
 import MapContainer from "./components/map-container";
 import useStore from "../../../store/useCount";

@@ -1,15 +1,15 @@
-import Contact from "./view/components/Contact";
-import Footer from "./view/components/Footer";
+import Contact from "./view/components/contact";
+import Footer from "./view/components/footer";
 import Header from "./view/components/header";
 import Home from "./view/components/home";
 import "./view/scrollbar.css";
 
 import Tables from "./view/components/tables";
-import CarouselCourses from "./view/components/Courses";
+import CarouselCourses from "./view/components/courses";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import ScrollTop from "./view/components/scrollTop";
-import Dashboard from "./view/components/Dashboard";
+import Dashboard from "./view/components/dashboard";
 import VisionSection from "./view/components/VisionSection";
 import ImpactSection from "./view/components/ImpactSection";
 import IdeaSection from "./view/components/IdeaSection";

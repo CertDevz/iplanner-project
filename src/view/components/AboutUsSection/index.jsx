@@ -1,5 +1,5 @@
-import Footer from "../Footer";
-import Header from "../header";
+import Footer from '../footer';
+import Header from '../header';
 
 export default function AboutUsSection() {
   const iplanner = <span id="title-iplanner">iplanner</span>;
@@ -20,7 +20,7 @@ export default function AboutUsSection() {
           className="w-full"
           style={{
             background:
-              "linear-gradient(to bottom right, #7c3aed 20%, #3d44c7 100%)",
+              'linear-gradient(to bottom right, #7c3aed 20%, #3d44c7 100%)',
           }}
         >
           <h2 className="font-bold text-lg text-white bg-[#db2777] inline-block px-2 py-1 rounded-sm">
@@ -59,7 +59,7 @@ export default function AboutUsSection() {
           className="w-full "
           style={{
             background:
-              "linear-gradient(to bottom right, #7c3aed 20%, #3d44c7 100%)",
+              'linear-gradient(to bottom right, #7c3aed 20%, #3d44c7 100%)',
           }}
         >
           <h2 className="font-bold text-lg text-white bg-[#db2777] inline-block px-2 py-1 rounded-sm">
