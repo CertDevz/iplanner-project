@@ -1,4 +1,4 @@
-export default function Impact() {
+export default function IdeaSection() {
   return (
     <div className="flex flex-col md:flex-row justify-between md:gap-40 mt-10 mb-10 md:mb-0 md:mt-0 md:h-screen">
       <div className="flex flex-col items-center justify-center  md:mb-0">

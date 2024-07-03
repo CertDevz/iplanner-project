@@ -1,21 +1,22 @@
-import Solution from "./view/components/Solution";
-import Contact from "./view/components/contact";
-import Footer from "./view/components/footer";
+import Contact from "./view/components/Contact";
+import Footer from "./view/components/Footer";
 import Header from "./view/components/header";
 import Home from "./view/components/home";
-import Vision from "./view/components/vision";
-import Introduction from "./view/components/introduction";
-import Iplanner from "./view/components/iplanner";
 import "./view/scrollbar.css";
-import Impact from "./view/components/impact";
-import Events from "./view/components/events";
-import EventsFree from "./view/components/events-free";
+
 import Tables from "./view/components/tables";
-import CarouselCourses from "./view/components/courses";
-import ParaQuem from "./view/components/para-quem";
+import CarouselCourses from "./view/components/Courses";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import ScrollTop from "./view/components/scrollTop";
+import Dashboard from "./view/components/Dashboard";
+import VisionSection from "./view/components/VisionSection";
+import ImpactSection from "./view/components/ImpactSection";
+import IdeaSection from "./view/components/IdeaSection";
+import EventManagementSection from "./view/components/EventManagementSection";
+import WhoWeAreSection from "./view/components/WhoWeAreSection";
+import EventsCardsSection from "./view/components/events-free";
+import Events from "./view/components/EventPage";
 
 function App() {
   const location = useLocation();
@@ -35,20 +36,19 @@ function App() {
       <Header />
       <div className="flex flex-col ">
         <ScrollTop />
-        <Iplanner />
+        <Dashboard />
         <Home />
       </div>
-      <Vision />
-      <Impact />
-      <Introduction />
-      <Solution />
-      <ParaQuem />
+      <VisionSection />
+      <ImpactSection />
+      <IdeaSection />
+      <EventManagementSection />
+      <WhoWeAreSection />
       <Events />
-      <EventsFree />
+      <EventsCardsSection />
       <Tables />
       <CarouselCourses />
       <Contact />
-
       <Footer />
     </div>
   );

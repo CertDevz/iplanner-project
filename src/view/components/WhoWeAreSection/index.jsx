@@ -1,4 +1,4 @@
-export default function ParaQuem() {
+export default function WhoWeAreSection() {
   return (
     <div
       id="para-quem"

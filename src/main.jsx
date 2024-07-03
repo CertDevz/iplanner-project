@@ -1,32 +1,32 @@
-import * as React from 'react';
-import * as ReactDOM from 'react-dom/client';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import './index.css';
-import App from './App';
-import WeAre from './view/components/weare';
-import Constructor from './view/components/constructor';
-import PageEvents from './view/components/page-events';
+import * as React from "react";
+import * as ReactDOM from "react-dom/client";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import "./index.css";
+import App from "./App";
+import PageEvents from "./view/components/page-events";
+import AboutUsSection from "./view/components/AboutUsSection";
+import UnderConstructionPage from "./view/components/UnderConstructionPage";
 
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: "/",
     element: <App />,
   },
   {
-    path: '/quem-somos',
-    element: <WeAre />,
+    path: "/quem-somos",
+    element: <AboutUsSection />,
   },
   {
-    path: '/constructor',
-    element: <Constructor />,
+    path: "/constructor",
+    element: <UnderConstructionPage />,
   },
   {
-    path: '/evento/:id/informacoes',
+    path: "/evento/:id/informacoes",
     element: <PageEvents />,
   },
 ]);
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <RouterProvider router={router} />
   </React.StrictMode>
