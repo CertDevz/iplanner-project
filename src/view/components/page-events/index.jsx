@@ -1,11 +1,11 @@
-import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import { Calendar, MapPin } from 'lucide-react';
-import Footer from '../footer';
-import Counter from './components/counter';
-import MapContainer from './components/map-container';
-import useStore from '../../../store/useCount';
-import { api } from '../../../api';
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { Calendar, MapPin } from "lucide-react";
+import Footer from "../Footer";
+import Counter from "./components/counter";
+import MapContainer from "./components/map-container";
+import useStore from "../../../store/useCount";
+import { api } from "../../../api";
 
 export default function PageEvents() {
   const params = useParams();
@@ -47,7 +47,7 @@ export default function PageEvents() {
               className="flex flex-col md:flex-row items-center gap-5 md:px-14 md:py-10 rounded-md p-5"
               style={{
                 background:
-                  'linear-gradient(to bottom right, #7c3aed 20%, #3d44c7 100%)',
+                  "linear-gradient(to bottom right, #7c3aed 20%, #3d44c7 100%)",
               }}
             >
               <div className="border-2 bg-gradient-to-r from-purple-800 to-indigo-500 p-2 rounded-full">
@@ -62,7 +62,7 @@ export default function PageEvents() {
               className="flex flex-col md:flex-row items-center gap-5 md:px-14 md:py-10 rounded-md p-5"
               style={{
                 background:
-                  'linear-gradient(to bottom right, #7c3aed 20%, #3d44c7 100%)',
+                  "linear-gradient(to bottom right, #7c3aed 20%, #3d44c7 100%)",
               }}
             >
               <div className="border-2 bg-gradient-to-r from-purple-800 to-indigo-500 p-2 rounded-full">
@@ -136,16 +136,16 @@ export default function PageEvents() {
           <div
             className="flex flex-col gap-7 justify-center mt-20 bg-white shadow-lg p-6 rounded-md"
             style={{
-              backgroundColor: 'rgba(243, 227, 255, 0.95)',
-              boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
+              backgroundColor: "rgba(243, 227, 255, 0.95)",
+              boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
             }}
           >
             <div
               className="flex flex-col lg:flex-row justify-between items-center px-4 py-5"
               style={{
                 background:
-                  'linear-gradient(to bottom right, #f3e3ff 20%, #d6d0ff 100%)',
-                boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
+                  "linear-gradient(to bottom right, #f3e3ff 20%, #d6d0ff 100%)",
+                boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
               }}
             >
               <div>
@@ -171,8 +171,8 @@ export default function PageEvents() {
               className="flex flex-col lg:flex-row justify-between items-center px-4 py-5"
               style={{
                 background:
-                  'linear-gradient(to bottom right, #f3e3ff 20%, #d6d0ff 100%)',
-                boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
+                  "linear-gradient(to bottom right, #f3e3ff 20%, #d6d0ff 100%)",
+                boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
               }}
             >
               <div>
@@ -198,8 +198,8 @@ export default function PageEvents() {
               className="flex flex-col lg:flex-row justify-between items-center px-4 py-5"
               style={{
                 background:
-                  'linear-gradient(to bottom right, #f3e3ff 20%, #d6d0ff 100%)',
-                boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
+                  "linear-gradient(to bottom right, #f3e3ff 20%, #d6d0ff 100%)",
+                boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
               }}
             >
               <div>
@@ -225,8 +225,8 @@ export default function PageEvents() {
               className="flex flex-col px-4 py-5 max-w-[450px]"
               style={{
                 background:
-                  'linear-gradient(to bottom right, #f3e3ff 20%, #d6d0ff 100%)',
-                boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
+                  "linear-gradient(to bottom right, #f3e3ff 20%, #d6d0ff 100%)",
+                boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
               }}
             >
               <span className="bg-gradient-to-br from-purple-400 to-indigo-500 text-transparent bg-clip-text font-bold">

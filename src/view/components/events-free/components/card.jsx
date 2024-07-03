@@ -2,7 +2,7 @@ export default function Card({ title, subtitle, items }) {
   return (
     <div className="p-10">
       <div
-        className="md:w-[500px] rounded-md p-5 max-h-[300px]"
+        className="md:w-[500px] rounded-md p-5 max-h-[350px]"
         style={{
           boxShadow: "5px 5px 10px rgba(0, 0, 0, 0.8)",
           background:
