@@ -1,7 +1,7 @@
 import React from "react";
 import { motion, useInView } from "framer-motion";
 
-export default function Vision() {
+export default function VisionSection() {
   const ref2 = React.useRef(null);
 
   const inView2 = useInView(ref2, { triggerOnce: true });

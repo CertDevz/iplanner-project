@@ -1,8 +1,8 @@
-import { Construction } from 'lucide-react';
-import Header from '../header';
-import Footer from '../footer';
+import { Construction } from "lucide-react";
+import Footer from "../Footer";
+import Header from "../header";
 
-export default function ConstructionPage() {
+export default function UnderConstructionPage() {
   const iplanner = <span id="title-iplanner">iplanner</span>;
   return (
     <div className="flex flex-col min-h-screen">

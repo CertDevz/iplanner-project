@@ -1,7 +1,7 @@
-import { motion } from 'framer-motion';
-import { isMobile, isSafari } from 'react-device-detect';
+import { motion } from "framer-motion";
+import { isMobile, isSafari } from "react-device-detect";
 
-export default function Iplanner() {
+export default function Dashboard() {
   return (
     <div
       id="home"
@@ -31,8 +31,8 @@ export default function Iplanner() {
             alt="medicos-grup"
             className={`${
               isSafari
-                ? 'object-cover w-full md:max-w-[980px] md:mt-60 h-screen md:h-[100%]'
-                : 'object-cover w-full md:max-w-[980px] md:mt-40 h-screen md:h-[100%]'
+                ? "object-cover w-full md:max-w-[980px] md:mt-60 h-screen md:h-[100%]"
+                : "object-cover w-full md:max-w-[980px] md:mt-40 h-screen md:h-[100%]"
             }`}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}

@@ -1,6 +1,6 @@
 import Card from "./components/card";
 
-export default function EventsFree() {
+export default function EventsCardsSection() {
   return (
     <div
       className="flex justify-center items-center "

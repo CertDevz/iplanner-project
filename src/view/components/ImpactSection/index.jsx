@@ -1,4 +1,4 @@
-export default function Impact() {
+export default function ImpactSection() {
   return (
     <div
       className="flex flex-col md:flex-row justify-between md:gap-40 md:h-screen -mt-12 md:mt-0"
