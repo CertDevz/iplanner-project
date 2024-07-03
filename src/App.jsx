@@ -9,7 +9,7 @@ import CarouselCourses from "./view/components/Courses";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import ScrollTop from "./view/components/scrollTop";
-import Dashboard from "./view/components/dashboard";
+import Dashboard from "./view/components/Dashboard";
 import VisionSection from "./view/components/VisionSection";
 import ImpactSection from "./view/components/ImpactSection";
 import IdeaSection from "./view/components/IdeaSection";
