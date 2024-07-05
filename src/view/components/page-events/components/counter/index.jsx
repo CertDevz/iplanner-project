@@ -10,15 +10,15 @@ const Counter = ({ id, price }) => {
   useEffect(() => {
     setGlobalCount(id, count);
     setGlobalPrice(id, price);
-  }, [count, setGlobalCount, id, price, setGlobalPrice]);
+  }, [count, id, price, setGlobalCount, setGlobalPrice]);
 
-  const handleDecrease = () => {
-    setCount((prevCount) => Math.max(prevCount - 1, 0));
-  };
+  function handleDecrease() {
+    setCount(count - 1);
+  }
 
-  const handleAdd = () => {
-    setCount((prevCount) => prevCount + 1);
-  };
+  function handleAdd() {
+    setCount(count + 1);
+  }
 
   return (
     <div className="flex gap-4">

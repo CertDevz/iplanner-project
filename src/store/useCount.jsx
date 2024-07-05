@@ -1,6 +1,6 @@
 import create from "zustand";
 
-const useStore = create((set) => ({
+const useStore = create((set, get) => ({
   counts: {},
   prices: {},
   setCount: (id, count) =>
@@ -11,13 +11,14 @@ const useStore = create((set) => ({
     set((state) => ({
       prices: { ...state.prices, [id]: price },
     })),
-  getTotal: () =>
-    set((state) => {
-      return Object.entries(state.counts).reduce((acc, [id, count]) => {
-        const price = state.prices[id] || 0;
-        return acc + count * price;
-      }, 0);
-    }),
+  getTotal: () => {
+    const state = get();
+    return Object.keys(state.counts).reduce((total, id) => {
+      const count = state.counts[id] || 0;
+      const price = state.prices[id] || 0;
+      return total + count * price;
+    }, 0);
+  },
 }));
 
 export default useStore;

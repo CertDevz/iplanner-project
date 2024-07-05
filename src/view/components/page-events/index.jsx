@@ -142,16 +142,16 @@ export default function PageEvents() {
           </div>
 
           <div
-            className="flex flex-col gap-7 justify-center mt-20 bg-white shadow-lg p-6 rounded-md"
+            className="flex flex-col gap-7 justify-center mt-20 bg-white shadow-lg p-6 rounded-md pb-20"
             style={{
-              backgroundColor: "rgba(243, 227, 255, 0.95)",
-              boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
+              backgroundColor: "rgb(243, 243, 243)",
+              boxShadow: "0 4px 8px rgba(0, 0, 0, 0.3)",
             }}
           >
             <EventCard
               id="palestra1"
               title="PALESTRA 1 - INCLUSÃO NO TEA: A PERSPECTIVA DE UM AUTISTA (GUILHERME DE ALMEIDA)"
-              price={80}
+              price={90}
             />
 
             <EventCard
@@ -217,10 +217,10 @@ export default function PageEvents() {
           <div className="flex flex-col md:flex-row mt-10 gap-5">
             <img src="/evento.jpg" alt="logo-evento" />
             <div className="text-left max-w-[600px]">
-              <h2 className="bg-gradient-to-br from-purple-800 to-indigo-500 text-transparent bg-clip-text font-black mb-2">
+              <h2 className="bg-gradient-to-br from-purple-900 to-indigo-500 text-transparent bg-clip-text font-black mb-2">
                 Colégio Shunji Nishimura
               </h2>
-              <span className="bg-gradient-to-br from-purple-400 to-indigo-500 text-transparent bg-clip-text font-bold">
+              <span className="bg-gradient-to-br from-purple-700 to-indigo-500 text-transparent bg-clip-text font-bold">
                 A Conferência INOVEDUCA é uma grande oportunidade para reunir
                 mantenedores, gestores, professores, coordenadores pedagógicos,
                 acadêmicos e demais profissionais interessados em educação e sua

@@ -1,6 +1,6 @@
 const CouponSection = () => (
-  <div className="flex flex-col px-4 py-5 max-w-[450px] bg-gradient-to-br from-[#f3e3ff] to-[#d6d0ff] shadow-lg">
-    <span className="bg-gradient-to-br from-purple-400 to-indigo-500 text-transparent bg-clip-text font-bold">
+  <div className="flex flex-col px-4 py-5 max-w-[450px] bg-gradient-to-r from-purple-800 to-indigo-500 shadow-lg rounded-md">
+    <span className="text-white font-bold">
       Tem um Cupom de Desconto/Acesso?
     </span>
     <div className="flex mt-2">
