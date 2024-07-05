@@ -14,7 +14,7 @@ const EventCard = ({ id, title, price }) => {
       </div>
       <div className="flex gap-3 mt-5 md:mt-0">
         <span className="text-white font-bold">Quantidade</span>
-        <div className="flex gap-4">
+        <div className="flex gap-4 text-white">
           <Counter id={id} price={numericPrice} />
         </div>
       </div>
