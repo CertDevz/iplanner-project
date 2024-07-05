@@ -39,10 +39,10 @@ export default function PageEvents() {
 
         <div className="md:max-w-[70%] mx-auto p-5">
           <div className="flex flex-col justify-center mt-5 items-center">
-            <h1 className="md:text-5xl text-3xl bg-gradient-to-br from-purple-800 to-indigo-500 text-transparent bg-clip-text font-bold text-center ">
+            <h1 className="md:text-5xl text-3xl text-purple-950 font-bold text-center ">
               {event.title}
             </h1>
-            <span className="text-center mt-5 text-2xl bg-gradient-to-br from-purple-900 to-indigo-500 text-transparent bg-clip-text">
+            <span className="text-center mt-5 text-2xl text-purple-600">
               {event.descriptionEvent}
             </span>
             <button className="font-semibold cursor-pointer px-8 py-3 bg-[#db2777] rounded-sm text-white mt-5 hover:bg-[#a1255d]">
@@ -84,11 +84,11 @@ export default function PageEvents() {
           </div>
 
           <div className="flex flex-col text-center justify-center mt-20 max-w-[700px] mx-auto">
-            <h1 className="text-3xl bg-gradient-to-br from-purple-800 to-indigo-500 text-transparent bg-clip-text font-bold mt-10">
+            <h1 className="text-3xl text-purple-950 font-bold mt-10">
               Sobre o Evento
             </h1>
             <div className="flex flex-col mt-10   text-left">
-              <h2 className="text-xl bg-gradient-to-br from-purple-800 to-indigo-500 text-transparent bg-clip-text font-bold ">
+              <h2 className="text-xl text-purple-800 font-bold ">
                 Venha participar deste super evento! Faça sua inscrição em uma
                 das palestras do evento
               </h2>
@@ -96,7 +96,7 @@ export default function PageEvents() {
                 Não se esqueça! Ao se inscrever, você terá direito a uma única
                 palestra avulsa!
               </span>
-              <p className="text-sm mt-10 bg-gradient-to-br from-purple-900 to-indigo-500 text-transparent bg-clip-text">
+              <p className="text-sm mt-10 text-purple-600">
                 A Conferência INOVEDUCA é uma grande oportunidade para reunir
                 mantenedores, gestores, professores, coordenadores pedagógicos,
                 acadêmicos e demais profissionais interessados em educação e sua
@@ -108,33 +108,29 @@ export default function PageEvents() {
             </div>
 
             <div className="flex flex-col mt-10 text-left">
-              <h2 className="text-2xl bg-gradient-to-br from-purple-800 to-indigo-500 text-transparent bg-clip-text font-bold">
+              <h2 className="text-2xl text-purple-800 font-bold">
                 Confira as palestras:
               </h2>
 
               <div className="mt-10">
-                <h2 className="bg-gradient-to-br from-purple-800 to-indigo-500 text-transparent bg-clip-text font-bold">
+                <h2 className="text-purple-800 font-bold">
                   INCLUSÃO NO TEA: A PERSPECTIVA DE UM AUTISTA
                 </h2>
-                <span className=" bg-gradient-to-br from-purple-900 to-indigo-400 text-transparent bg-clip-text">
-                  Guilherme de Almeida
-                </span>
+                <span className=" text-purple-600">Guilherme de Almeida</span>
               </div>
 
               <div className="mt-10">
-                <h2 className="bg-gradient-to-br from-purple-800 to-indigo-500 text-transparent bg-clip-text font-bold">
+                <h2 className="text-purple-800 font-bold">
                   O PREJUÍZO DO USO EXCESSIVO DE TELAS
                 </h2>
-                <span className=" bg-gradient-to-br from-purple-900 to-indigo-400 text-transparent bg-clip-text">
-                  Cecília Antipoff
-                </span>
+                <span className="text-purple-600">Cecília Antipoff</span>
               </div>
 
               <div className="mt-10">
-                <h2 className="bg-gradient-to-br from-purple-800 to-indigo-500 text-transparent bg-clip-text font-bold">
+                <h2 className="text-purple-800 font-bold">
                   AS DIFERENÇAS NO CÉREBRO DE QUEM TEM AUTISMO E TDAH
                 </h2>
-                <span className=" bg-gradient-to-br from-purple-900 to-indigo-400 text-transparent bg-clip-text">
+                <span className=" text-purple-600">
                   Dr. Marcone de Souza Oliveira
                 </span>
               </div>
@@ -192,11 +188,9 @@ export default function PageEvents() {
           </div>
 
           <div className="flex flex-col text-center justify-center md:mt-20 items-center">
-            <h1 className="text-5xl bg-gradient-to-br from-purple-800 to-indigo-500 text-transparent bg-clip-text font-bold mt-10">
-              Local
-            </h1>
+            <h1 className="text-5xl text-purple-950 font-bold mt-10">Local</h1>
             <div className="flex flex-col mt-10 md:text-left">
-              <h2 className="bg-gradient-to-br from-purple-400 to-indigo-500 text-transparent bg-clip-text font-black">
+              <h2 className="text-purple-600 font-black">
                 Avenida Shunji Nishimura - 17580-050, Avenida Shunji Nishimura,
                 Distrito Industrial, Pompéia, São Paulo,
               </h2>
@@ -211,16 +205,16 @@ export default function PageEvents() {
 
       <div className="md:max-w-[70%] mx-auto p-5 mb-10">
         <div className="flex flex-col text-center justify-center md:mt-20 items-center">
-          <h1 className="text-5xl bg-gradient-to-br from-purple-800 to-indigo-500 text-transparent bg-clip-text font-bold mt-10">
+          <h1 className="text-5xl text-purple-950 font-bold mt-10">
             Organizador
           </h1>
           <div className="flex flex-col md:flex-row mt-10 gap-5">
             <img src="/evento.jpg" alt="logo-evento" />
             <div className="text-left max-w-[600px]">
-              <h2 className="bg-gradient-to-br from-purple-900 to-indigo-500 text-transparent bg-clip-text font-black mb-2">
+              <h2 className="text-purple-800 font-black mb-2">
                 Colégio Shunji Nishimura
               </h2>
-              <span className="bg-gradient-to-br from-purple-700 to-indigo-500 text-transparent bg-clip-text font-bold">
+              <span className="text-purple-600 font-bold">
                 A Conferência INOVEDUCA é uma grande oportunidade para reunir
                 mantenedores, gestores, professores, coordenadores pedagógicos,
                 acadêmicos e demais profissionais interessados em educação e sua
