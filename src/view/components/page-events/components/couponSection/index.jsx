@@ -3,13 +3,13 @@ const CouponSection = () => (
     <span className="text-white font-bold">
       Tem um Cupom de Desconto/Acesso?
     </span>
-    <div className="flex mt-2">
+    <div className="flex flex-col gap-2 md:flex-row mt-2">
       <input
         type="text"
-        className="md:px-3 md:py-3 px-2 focus:outline-none"
+        className="md:px-3 md:py-3 p-2 focus:outline-none"
         placeholder="Informe seu cupom"
       />
-      <button className="font-semibold cursor-pointer md:px-3 md:py-3 bg-[#db2777] rounded-sm text-white hover:bg-[#a1255d]">
+      <button className="font-semibold cursor-pointer p-3 bg-[#db2777] rounded-sm text-white hover:bg-[#a1255d]">
         VALIDAR CUPOM
       </button>
     </div>
