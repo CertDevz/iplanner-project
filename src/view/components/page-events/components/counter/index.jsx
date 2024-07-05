@@ -1,23 +1,24 @@
-// Counter.js
 import { CircleMinus, CirclePlus } from "lucide-react";
 import { useState, useEffect } from "react";
 import useStore from "../../../../../store/useCount";
 
-const Counter = () => {
+const Counter = ({ id, price }) => {
   const [count, setCount] = useState(0);
   const setGlobalCount = useStore((state) => state.setCount);
+  const setGlobalPrice = useStore((state) => state.setPrice);
 
   useEffect(() => {
-    setGlobalCount(count);
-  }, [count, setGlobalCount]);
+    setGlobalCount(id, count);
+    setGlobalPrice(id, price);
+  }, [count, setGlobalCount, id, price, setGlobalPrice]);
 
-  function handleDecrease() {
-    setCount(count - 1);
-  }
+  const handleDecrease = () => {
+    setCount((prevCount) => Math.max(prevCount - 1, 0));
+  };
 
-  function handleAdd() {
-    setCount(count + 1);
-  }
+  const handleAdd = () => {
+    setCount((prevCount) => prevCount + 1);
+  };
 
   return (
     <div className="flex gap-4">
