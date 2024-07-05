@@ -5,7 +5,7 @@ const EventCard = ({ id, title, price }) => {
   return (
     <div className="flex flex-col lg:flex-row justify-between items-center px-4 py-5 bg-gradient-to-r from-purple-800 to-indigo-500 shadow-lg rounded-md">
       <div>
-        <h1 className=" text-white font-bold text-lg max-w-[550px] mb-5">
+        <h1 className=" text-white font-bold md:text-lg max-w-[550px] mb-5">
           {title}
         </h1>
         <span className="text-white font-bold">
