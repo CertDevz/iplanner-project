@@ -7,16 +7,16 @@ import { api } from "../../../api";
 import EventCard from "./components/eventCard";
 import CouponSection from "./components/couponSection";
 import Footer from "../footer";
+import CourseInfo from "./components/courseInfo";
 
 export default function PageEvents() {
   const params = useParams();
   const [event, setEvent] = useState({});
+
   useEffect(() => {
     const find = async () => {
       const { data } = await api.get(`/curso/${params.id}`);
       setEvent(data);
-
-      console.log(data);
     };
 
     find();
@@ -28,31 +28,40 @@ export default function PageEvents() {
     0
   );
 
+  function dataAtualFormatada() {
+    var data = new Date(),
+      dia = data.getDate().toString(),
+      diaF = dia.length == 1 ? "0" + dia : dia,
+      mes = (data.getMonth() + 1).toString(),
+      mesF = mes.length == 1 ? "0" + mes : mes,
+      anoF = data.getFullYear();
+    return diaF + "/" + mesF + "/" + anoF;
+  }
+
+  const dataFormatada = dataAtualFormatada(event.date);
+
   return (
     <div>
       <div className="mb-10">
         <img
           src={event.backgroundImage}
           alt="banner do evento"
-          className="w-full  filter brightness-75"
+          className="w-full filter brightness-75"
         />
 
         <div className="md:max-w-[70%] mx-auto p-5">
-          <div className="flex flex-col justify-center mt-5 items-center">
+          <div className="flex flex-col justify-center mt-5 items-center gap-10">
             <h1 className="md:text-5xl text-3xl text-purple-950 font-bold text-center ">
               {event.title}
             </h1>
-            <span className="text-center mt-5 text-2xl text-purple-600">
-              {event.descriptionEvent}
-            </span>
             <button className="font-semibold cursor-pointer px-8 py-3 bg-[#db2777] rounded-sm text-white mt-5 hover:bg-[#a1255d]">
               Faça sua incrição
             </button>
           </div>
 
-          <div className="flex flex-col gap-5 md:gap-0 md:flex-row justify-around mt-10">
+          <div className="flex flex-col md:flex-row  gap-5 mt-10">
             <div
-              className="flex flex-col md:flex-row items-center gap-5 md:px-14 md:py-10 rounded-md p-5"
+              className="flex flex-col md:flex-row items-center gap-5 rounded-md p-5 flex-1"
               style={{
                 background:
                   "linear-gradient(to bottom right, #7c3aed 20%, #3d44c7 100%)",
@@ -62,32 +71,32 @@ export default function PageEvents() {
                 <Calendar size={50} color="white" />
               </div>
               <div className="flex flex-col">
-                <span className="font-bold text-white">{event.date}</span>
+                <span className="font-bold text-white">{dataFormatada}</span>
                 <span className="text-white">Confira a programação</span>
               </div>
             </div>
             <div
-              className="flex flex-col md:flex-row items-center gap-5 md:px-14 md:py-10 rounded-md p-5"
+              className="flex flex-col md:flex-row items-center gap-5 rounded-md p-5 flex-1"
               style={{
                 background:
                   "linear-gradient(to bottom right, #7c3aed 20%, #3d44c7 100%)",
               }}
             >
-              <div className="border-2 bg-gradient-to-r from-purple-800 to-indigo-500 p-2 rounded-full">
+              <div className="border-2 p-2 rounded-full">
                 <MapPin size={50} color="white" />
               </div>
               <div className="flex flex-col">
                 <span className="font-bold text-white">{event.local}</span>
-                <span className="text-white">Avenida Shunji Nishimura</span>
+                <span className="text-white">{event.descriptionLocal}</span>
               </div>
             </div>
           </div>
 
-          <div className="flex flex-col text-center justify-center mt-20 max-w-[700px] mx-auto">
+          <div className="flex flex-col text-center justify-center mt-20 max-w-[900px] mx-auto">
             <h1 className="text-3xl text-purple-950 font-bold mt-10">
               Sobre o Evento
             </h1>
-            <div className="flex flex-col mt-10   text-left">
+            <div className="flex flex-col mt-10  text-left">
               <h2 className="text-xl text-purple-800 font-bold ">
                 Venha participar deste super evento! Faça sua inscrição em uma
                 das palestras do evento
@@ -96,14 +105,12 @@ export default function PageEvents() {
                 Não se esqueça! Ao se inscrever, você terá direito a uma única
                 palestra avulsa!
               </span>
-              <p className="text-sm mt-10 text-purple-600">
-                A Conferência INOVEDUCA é uma grande oportunidade para reunir
-                mantenedores, gestores, professores, coordenadores pedagógicos,
-                acadêmicos e demais profissionais interessados em educação e sua
-                interface com a inovação, possibilitando a integração entre eles
-                em um processo de reflexão e atualização sobre temáticas e
-                desafios contemporâneos da educação, recebendo convidados de
-                renome para discutir variados assuntos de interesse da área.
+              <p className="md:text-lg text-sm mt-10 text-purple-600 p-5 shadow-2xl">
+                {event.descriptionEvent ? (
+                  <CourseInfo descriptionEvent={event.descriptionEvent} />
+                ) : (
+                  <p>Carregando...</p>
+                )}
               </p>
             </div>
 
@@ -191,8 +198,7 @@ export default function PageEvents() {
             <h1 className="text-5xl text-purple-950 font-bold mt-10">Local</h1>
             <div className="flex flex-col mt-10 md:text-left">
               <h2 className="text-purple-600 font-black">
-                Avenida Shunji Nishimura - 17580-050, Avenida Shunji Nishimura,
-                Distrito Industrial, Pompéia, São Paulo,
+                {event.local} - {event.descriptionLocal}
               </h2>
             </div>
           </div>
@@ -205,9 +211,7 @@ export default function PageEvents() {
 
       <div className="md:max-w-[70%] mx-auto p-5 mb-10">
         <div className="flex flex-col text-center justify-center md:mt-20 items-center">
-          <h1 className="text-5xl text-purple-950 font-bold mt-10">
-            Organizador
-          </h1>
+          <h1 className="text-5xl text-purple-950 font-bold ">Organizador</h1>
           <div className="flex flex-col md:flex-row mt-10 gap-5">
             <img src="/evento.jpg" alt="logo-evento" />
             <div className="text-left max-w-[600px]">
