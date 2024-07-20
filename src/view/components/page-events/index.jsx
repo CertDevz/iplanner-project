@@ -1,17 +1,19 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Calendar, MapPin } from "lucide-react";
-import MapContainer from "./components/map-container";
 import useStore from "../../../store/useCount";
 import { api } from "../../../api";
 import EventCard from "./components/eventCard";
 import CouponSection from "./components/couponSection";
 import Footer from "../footer";
 import CourseInfo from "./components/courseInfo";
+import axios from "axios";
 
 export default function PageEvents() {
   const params = useParams();
   const [event, setEvent] = useState({});
+  const [formData, setFormData] = useState({ name: "", email: "" });
+  const [showPopup, setShowPopup] = useState(false);
 
   useEffect(() => {
     const find = async () => {
@@ -40,6 +42,39 @@ export default function PageEvents() {
 
   const dataFormatada = dataAtualFormatada(event.date);
 
+  const validateEmail = (email) => {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email);
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    console.log("Form submitted", formData);
+
+    if (!validateEmail(formData.email)) {
+      alert("Por favor, insira um e-mail válido.");
+      return;
+    }
+
+    console.log("Backend status:", import.meta.env.VITE_BACKEND_AVAILABLE);
+    if (import.meta.env.VITE_BACKEND_AVAILABLE === "false") {
+      console.log("Backend not available, simulating response...");
+      setShowPopup(true);
+      return;
+    }
+
+    try {
+      const response = await axios.post(
+        "http://localhost:3333/send-mail",
+        formData
+      );
+      console.log("Email sent:", response);
+      setShowPopup(true);
+    } catch (error) {
+      console.error("Error sending email:", error);
+    }
+  };
+
   return (
     <div>
       <div className="mb-10">
@@ -54,12 +89,19 @@ export default function PageEvents() {
             <h1 className="md:text-5xl text-3xl text-purple-950 font-bold text-center ">
               {event.title}
             </h1>
-            <button className="font-semibold cursor-pointer px-8 py-3 bg-[#db2777] rounded-sm text-white mt-5 hover:bg-[#a1255d]">
-              Faça sua incrição
+            <button
+              className="font-semibold cursor-pointer px-8 py-3 bg-[#db2777] rounded-sm text-white mt-5 hover:bg-[#a1255d]"
+              onClick={() =>
+                document
+                  .getElementById("form-section")
+                  .scrollIntoView({ behavior: "smooth" })
+              }
+            >
+              Faça sua inscrição
             </button>
           </div>
 
-          <div className="flex flex-col md:flex-row  gap-5 mt-10">
+          <div className="flex flex-col md:flex-row gap-5 mt-10">
             <div
               className="flex flex-col md:flex-row items-center gap-5 rounded-md p-5 flex-1"
               style={{
@@ -96,8 +138,8 @@ export default function PageEvents() {
             <h1 className="text-3xl text-purple-950 font-bold mt-10">
               Sobre o Evento
             </h1>
-            <div className="flex flex-col mt-10  text-left">
-              <h2 className="text-xl text-purple-800 font-bold ">
+            <div className="flex flex-col mt-10 text-left">
+              <h2 className="text-xl text-purple-800 font-bold">
                 Venha participar deste super evento! Faça sua inscrição em uma
                 das palestras do evento
               </h2>
@@ -169,69 +211,75 @@ export default function PageEvents() {
               price={80}
             />
             <CouponSection />
+          </div>
 
-            <div className="flex flex-col items-center justify-center mt-10">
-              <h1 className="bg-gradient-to-br from-purple-800 to-indigo-500 text-transparent bg-clip-text font-bold md:text-2xl text-lg ">
-                Valor da sua compra: R$ {totalCount * 80}
-              </h1>
-              <form className="flex flex-col md:flex-row gap-5 mt-5 ">
+          <div className="text-center mt-10">
+            <h1 className="bg-gradient-to-br from-purple-800 to-indigo-500 text-transparent bg-clip-text font-bold md:text-2xl text-lg ">
+              Valor da sua compra: R$ {totalCount * 80}
+            </h1>
+          </div>
+
+          <div className="mt-10">
+            <div className="bg-white p-5 shadow-md rounded-lg mt-10">
+              <h2 className="text-center text-2xl text-purple-800 font-bold">
+                Inscreva-se Agora!
+              </h2>
+              <form
+                className="flex flex-col gap-5 mt-10"
+                id="form-section"
+                onSubmit={handleSubmit}
+              >
                 <input
                   type="text"
-                  placeholder="Nome completo do comprador"
-                  className="w-[250px] px-4 py-2 md:py-0 focus:outline-none"
-                  required
+                  placeholder="Nome completo"
+                  className="p-3 rounded-lg border-2 border-purple-500"
+                  value={formData.name}
+                  onChange={(e) =>
+                    setFormData({ ...formData, name: e.target.value })
+                  }
                 />
                 <input
-                  type="text"
-                  placeholder="E-mail do comprador"
-                  className="w-[250px] px-4 py-2 md:py-0 focus:outline-none"
-                  required
+                  type="email"
+                  placeholder="Seu e-mail"
+                  className="p-3 rounded-lg border-2 border-purple-500"
+                  value={formData.email}
+                  onChange={(e) =>
+                    setFormData({ ...formData, email: e.target.value })
+                  }
                 />
-                <button className="font-semibold cursor-pointer px-4 py-3 bg-[#db2777] rounded-sm text-white  hover:bg-[#a1255d]">
+                <button
+                  type="submit"
+                  className="font-semibold cursor-pointer px-8 py-3 bg-[#db2777] rounded-sm text-white mt-5 hover:bg-[#a1255d]"
+                >
                   CONTINUAR
                 </button>
               </form>
             </div>
           </div>
-
-          <div className="flex flex-col text-center justify-center md:mt-20 items-center">
-            <h1 className="text-5xl text-purple-950 font-bold mt-10">Local</h1>
-            <div className="flex flex-col mt-10 md:text-left">
-              <h2 className="text-purple-600 font-black">
-                {event.local} - {event.descriptionLocal}
-              </h2>
-            </div>
-          </div>
         </div>
       </div>
 
-      <div className="w-full">
-        <MapContainer />
-      </div>
-
-      <div className="md:max-w-[70%] mx-auto p-5 mb-10">
-        <div className="flex flex-col text-center justify-center md:mt-20 items-center">
-          <h1 className="text-5xl text-purple-950 font-bold ">Organizador</h1>
-          <div className="flex flex-col md:flex-row mt-10 gap-5">
-            <img src="/evento.jpg" alt="logo-evento" />
-            <div className="text-left max-w-[600px]">
-              <h2 className="text-purple-800 font-black mb-2">
-                Colégio Shunji Nishimura
-              </h2>
-              <span className="text-purple-600 font-bold">
-                A Conferência INOVEDUCA é uma grande oportunidade para reunir
-                mantenedores, gestores, professores, coordenadores pedagógicos,
-                acadêmicos e demais profissionais interessados em educação e sua
-                interface com a inovação, possibilitando a integração entre eles
-                em um processo de reflexão e atualização sobre temáticas e
-                desafios contemporâneos da educação, recebendo convidados de
-                renome para discutir variados assuntos de interesse da área.
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
       <Footer />
+
+      {showPopup && (
+        <div className="fixed inset-0 flex items-center justify-center bg-gray-700 bg-opacity-50">
+          <div className="bg-white p-6 rounded-lg shadow-lg max-w-sm w-full">
+            <h2 className="text-lg text-purple-950 font-semibold mb-4">
+              Formulário Enviado!
+            </h2>
+            <p className="text-purple-700">
+              As instruções de confirmação de incrição foram enviadas por
+              e-mail.
+            </p>
+            <button
+              onClick={() => setShowPopup(false)}
+              className="mt-4 px-4 py-2 bg-purple-800 text-white rounded"
+            >
+              Fechar
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
