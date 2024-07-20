@@ -1,13 +1,9 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Calendar, MapPin } from "lucide-react";
-import useStore from "../../../store/useCount";
 import { api } from "../../../api";
-import EventCard from "./components/eventCard";
-import CouponSection from "./components/couponSection";
 import Footer from "../footer";
 import CourseInfo from "./components/courseInfo";
-import axios from "axios";
 
 export default function PageEvents() {
   const params = useParams();
@@ -24,11 +20,13 @@ export default function PageEvents() {
     find();
   }, [params.id]);
 
-  const counts = useStore((state) => state.counts);
-  const totalCount = Object.values(counts).reduce(
-    (acc, count) => acc + count,
-    0
-  );
+  console.log("event: ", event);
+
+  // const counts = useStore((state) => state.counts);
+  // const totalCount = Object.values(counts).reduce(
+  //   (acc, count) => acc + count,
+  //   0
+  // );
 
   function dataAtualFormatada() {
     var data = new Date(),
@@ -49,7 +47,6 @@ export default function PageEvents() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form submitted", formData);
 
     if (!validateEmail(formData.email)) {
       alert("Por favor, insira um e-mail válido.");
@@ -63,17 +60,31 @@ export default function PageEvents() {
       return;
     }
 
+    const emailFrom = {
+      ...formData,
+      eventId: params.id,
+      date: event.date,
+      hour: event.hour,
+    };
+    console.log(emailFrom);
+
     try {
-      const response = await axios.post(
-        "http://localhost:3333/send-mail",
-        formData
-      );
+      const response = await api.request({
+        url: "/send-mail",
+        method: "POST",
+        data: emailFrom,
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
       console.log("Email sent:", response);
       setShowPopup(true);
     } catch (error) {
       console.error("Error sending email:", error);
     }
   };
+
+  const localData = event.local ? JSON.parse(event.local) : null;
 
   return (
     <div>
@@ -112,7 +123,7 @@ export default function PageEvents() {
               <div className="border-2 bg-gradient-to-r from-purple-800 to-indigo-500 p-2 rounded-full">
                 <Calendar size={50} color="white" />
               </div>
-              <div className="flex flex-col">
+              <div className="flex flex-col items-center md:items-start">
                 <span className="font-bold text-white">{dataFormatada}</span>
                 <span className="text-white">Confira a programação</span>
               </div>
@@ -127,9 +138,29 @@ export default function PageEvents() {
               <div className="border-2 p-2 rounded-full">
                 <MapPin size={50} color="white" />
               </div>
-              <div className="flex flex-col">
-                <span className="font-bold text-white">{event.local}</span>
-                <span className="text-white">{event.descriptionLocal}</span>
+              <div className="flex flex-col items-center md:items-start">
+                {localData && (
+                  <>
+                    <span className="font-bold text-white">
+                      Bairro: {localData.bairro}
+                    </span>
+                    <span className="font-bold text-white">
+                      CEP: {localData.cep}
+                    </span>
+                    <span className="font-bold text-white">
+                      Cidade: {localData.cidade}
+                    </span>
+                    <span className="font-bold text-white">
+                      Estado: {localData.estado}
+                    </span>
+                    <span className="font-bold text-white">
+                      Rua: {localData.rua}
+                    </span>
+                  </>
+                )}
+                <span className="font-bold text-white">
+                  {event.descriptionLocal}
+                </span>
               </div>
             </div>
           </div>
@@ -158,35 +189,26 @@ export default function PageEvents() {
 
             <div className="flex flex-col mt-10 text-left">
               <h2 className="text-2xl text-purple-800 font-bold">
-                Confira as palestras:
+                Confira os palestrantes
               </h2>
 
-              <div className="mt-10">
-                <h2 className="text-purple-800 font-bold">
-                  INCLUSÃO NO TEA: A PERSPECTIVA DE UM AUTISTA
-                </h2>
-                <span className=" text-purple-600">Guilherme de Almeida</span>
-              </div>
-
-              <div className="mt-10">
-                <h2 className="text-purple-800 font-bold">
-                  O PREJUÍZO DO USO EXCESSIVO DE TELAS
-                </h2>
-                <span className="text-purple-600">Cecília Antipoff</span>
-              </div>
-
-              <div className="mt-10">
-                <h2 className="text-purple-800 font-bold">
-                  AS DIFERENÇAS NO CÉREBRO DE QUEM TEM AUTISMO E TDAH
-                </h2>
-                <span className=" text-purple-600">
-                  Dr. Marcone de Souza Oliveira
-                </span>
-              </div>
+              {event.speaker &&
+                event.speaker.map((speaker, index) => (
+                  <li className="flex items-center mt-5" key={index}>
+                    <img
+                      className="w-10 h-10 rounded-full"
+                      src={speaker.avatar}
+                      alt="Rounded avatar"
+                    ></img>
+                    <span className="text-lg text-purple-950 font-semibold">
+                      {speaker.name}
+                    </span>
+                  </li>
+                ))}
             </div>
           </div>
 
-          <div
+          {/* <div
             className="flex flex-col gap-7 justify-center mt-20 bg-white shadow-lg p-6 rounded-md pb-20"
             style={{
               backgroundColor: "rgb(243, 243, 243)",
@@ -211,12 +233,12 @@ export default function PageEvents() {
               price={80}
             />
             <CouponSection />
-          </div>
+          </div> */}
 
           <div className="text-center mt-10">
-            <h1 className="bg-gradient-to-br from-purple-800 to-indigo-500 text-transparent bg-clip-text font-bold md:text-2xl text-lg ">
+            {/* <h1 className="bg-gradient-to-br from-purple-800 to-indigo-500 text-transparent bg-clip-text font-bold md:text-2xl text-lg ">
               Valor da sua compra: R$ {totalCount * 80}
-            </h1>
+            </h1> */}
           </div>
 
           <div className="mt-10">

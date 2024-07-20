@@ -12,11 +12,7 @@ export default function CourseInfo({ descriptionEvent }) {
       );
     }
 
-    return (
-      <p className="" key={index}>
-        {line}
-      </p>
-    );
+    return <div dangerouslySetInnerHTML={{ __html: descriptionEvent }}></div>;
   });
 
   return <div>{formattedText}</div>;
