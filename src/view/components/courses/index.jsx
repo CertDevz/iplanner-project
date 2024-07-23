@@ -59,7 +59,10 @@ const CarouselCourses = () => {
     >
       <Slider {...settings}>
         {cursos.map((course, index) => (
-          <div key={index} className="px-2 max-w-[600px] h-[350px]">
+          <div
+            key={index}
+            className=" flex items-center gap-5 px-2 max-w-[600px] h-[350px]"
+          >
             <div className="bg-white rounded-lg overflow-hidden shadow-md h-full">
               <img
                 src={course.image}
