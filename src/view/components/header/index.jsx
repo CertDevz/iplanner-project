@@ -285,14 +285,15 @@ function Header() {
               )}
             </li>
 
-            <Link to="https://painel.iplanner.net.br/event">
-              <Button
-                text="Criar seu evento"
-                onClick={() => scrollToSection("create-event")}
-              />
+            <Link href="https://painel.iplanner.net.br/event">
+              <a target="_blank">
+                <Button text="Criar seu evento" />
+              </a>
             </Link>
-            <Link to="https://painel.iplanner.net.br/">
-              <Button text="Login" />
+            <Link href="https://painel.iplanner.net.br/">
+              <a target="_blank">
+                <Button text="Login" />
+              </a>
             </Link>
           </ul>
         </div>
