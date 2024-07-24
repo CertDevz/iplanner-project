@@ -1,9 +1,6 @@
 export default function Events() {
   return (
-    <div
-      id="events"
-      className="grid grid-cols-1 md:grid-cols-2s lg:grid-cols-4 gap-6 max-w-7xl mx-auto px-4 py-36"
-    >
+    <div className="grid grid-cols-1 md:grid-cols-2s lg:grid-cols-4 gap-6 max-w-7xl mx-auto px-4 py-36">
       <div className=" relative overflow-hidden rounded-lg shadow-xl transform hover:scale-105 transition-transform duration-500">
         <img
           src="/events/event1.jpg"

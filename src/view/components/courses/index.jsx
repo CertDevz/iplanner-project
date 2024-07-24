@@ -51,6 +51,7 @@ const CarouselCourses = () => {
 
   return (
     <div
+      id="events"
       className="w-full md:p-10 p-5"
       style={{
         background:
