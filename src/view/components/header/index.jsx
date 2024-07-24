@@ -161,15 +161,12 @@ function Header() {
         </div>
 
         <div className="hidden lg:block">
-          <Link to="https://painel.iplanner.net.br/event">
-            <Button
-              text="Criar seu evento"
-              onClick={() => scrollToSection("/constructor")}
-            />
-          </Link>
-          <Link to="https://painel.iplanner.net.br">
+          <a href="https://painel.iplanner.net.br/event" target="_blank">
+            <Button text="Criar seu evento" />
+          </a>
+          <a href="https://painel.iplanner.net.br" target="_blank">
             <Button text="Login" className="ml-5" />
-          </Link>
+          </a>
         </div>
 
         <div className="block lg:hidden">
@@ -285,16 +282,12 @@ function Header() {
               )}
             </li>
 
-            <Link href="https://painel.iplanner.net.br/event">
-              <a target="_blank">
-                <Button text="Criar seu evento" />
-              </a>
-            </Link>
-            <Link href="https://painel.iplanner.net.br/">
-              <a target="_blank">
-                <Button text="Login" />
-              </a>
-            </Link>
+            <a href="https://painel.iplanner.net.br/event" target="_blank">
+              <Button text="Criar seu evento" />
+            </a>
+            <a to="https://painel.iplanner.net.br/" target="_blank">
+              <Button text="Login" />
+            </a>
           </ul>
         </div>
       </header>
