@@ -14,10 +14,10 @@ import {
   User,
   Wrench,
   X,
-} from "lucide-react";
-import Button from "./components/button";
-import { Link, useNavigate } from "react-router-dom";
-import { useHeader } from "../hooks/useHeader";
+} from 'lucide-react';
+import Button from './components/button';
+import { Link, useNavigate } from 'react-router-dom';
+import { useHeader } from '../hooks/useHeader';
 
 function Header() {
   const {
@@ -35,7 +35,7 @@ function Header() {
   const navigate = useNavigate();
 
   const handleSectionClick = (sectionId) => {
-    if (window.location.pathname === "/") {
+    if (window.location.pathname === '/') {
       scrollToSection(sectionId);
     } else {
       navigate(`/#${sectionId}`);
@@ -48,17 +48,17 @@ function Header() {
         className={`flex items-center gap-40 justify-between px-4 p-1 fixed-header`}
         style={{
           background:
-            "linear-gradient(to bottom right, #7c3aed 20%, #3d44c7 100%)",
+            'linear-gradient(to bottom right, #7c3aed 20%, #3d44c7 100%)',
         }}
       >
         <div className="flex items-center gap-10">
-          <Link to="/" onClick={() => handleSectionClick("home")}>
+          <Link to="/" onClick={() => handleSectionClick('home')}>
             <img loading="lazy" src="/icon.svg" alt="logo" width={45} />
           </Link>
 
           <nav
             className={`lg:flex lg:items-center lg:w-auto ${
-              isMenuOpen ? "block" : "hidden"
+              isMenuOpen ? 'block' : 'hidden'
             }`}
           >
             <ul className="flex flex-col lg:flex-row lg:gap-3 justify-between text-white lg:cursor-pointer ">
@@ -68,7 +68,7 @@ function Header() {
                 </span>
               </Link>
 
-              <li onClick={() => handleSectionClick("para-quem")}>
+              <li onClick={() => handleSectionClick('para-quem')}>
                 <span className="font-semibold cursor-pointer px-5 py-2 bg-[#db2777] rounded-sm">
                   Para quem
                 </span>
@@ -82,7 +82,7 @@ function Header() {
                   Soluções
                   <ChevronDown
                     className={`ml-1 inline-block w-4 h-4 transform ${
-                      isServicesDropdownOpen ? "rotate-180" : ""
+                      isServicesDropdownOpen ? 'rotate-180' : ''
                     }`}
                   />
                 </span>
@@ -151,7 +151,7 @@ function Header() {
                   </div>
                 )}
               </li>
-              <li onClick={() => handleSectionClick("events")}>
+              <li onClick={() => handleSectionClick('events')}>
                 <span className="font-semibold cursor-pointer px-5 py-2 bg-[#db2777] rounded-sm">
                   Eventos
                 </span>
@@ -161,12 +161,12 @@ function Header() {
         </div>
 
         <div className="hidden lg:block">
-          <a href="https://painel.iplanner.net.br/event" target="_blank">
+          <Link to="https://painel.iplanner.net.br/event" target="_blank">
             <Button text="Criar seu evento" />
-          </a>
-          <a href="https://painel.iplanner.net.br" target="_blank">
+          </Link>
+          <Link href="https://painel.iplanner.net.br" target="_blank">
             <Button text="Login" className="ml-5" />
-          </a>
+          </Link>
         </div>
 
         <div className="block lg:hidden">
@@ -176,7 +176,7 @@ function Header() {
           >
             <Menu />
             {isMenuOpenMobile ? (
-              ""
+              ''
             ) : (
               <path
                 strokeLinecap="round"
@@ -188,7 +188,7 @@ function Header() {
           </button>
         </div>
 
-        <div className={`mobile-menu ${isMenuOpenMobile ? "open" : ""}`}>
+        <div className={`mobile-menu ${isMenuOpenMobile ? 'open' : ''}`}>
           <button
             onClick={toggleMenuMobile}
             className="text-white focus:outline-none mb-10"
@@ -197,13 +197,13 @@ function Header() {
           </button>
 
           <ul>
-            <li onClick={() => redirectToExternalPage("/quem-somos")}>
+            <li onClick={() => redirectToExternalPage('/quem-somos')}>
               <span>Quem Somos</span>
             </li>
-            <li onClick={() => handleSectionClick("para-quem")}>
+            <li onClick={() => handleSectionClick('para-quem')}>
               <span>Para quem</span>
             </li>
-            <li onClick={() => handleSectionClick("events")}>
+            <li onClick={() => handleSectionClick('events')}>
               <span>Eventos</span>
             </li>
 
@@ -212,7 +212,7 @@ function Header() {
                 Serviços
                 <ChevronDown
                   className={`ml-1 inline-block w-4 h-4 transform ${
-                    isServicesOpen ? "rotate-180" : ""
+                    isServicesOpen ? 'rotate-180' : ''
                   }`}
                 />
               </span>
@@ -282,12 +282,12 @@ function Header() {
               )}
             </li>
 
-            <a href="https://painel.iplanner.net.br/event" target="_blank">
+            <Link href="https://painel.iplanner.net.br/event" target="_blank">
               <Button text="Criar seu evento" />
-            </a>
-            <a to="https://painel.iplanner.net.br/" target="_blank">
+            </Link>
+            <Link to="https://painel.iplanner.net.br" target="_blank">
               <Button text="Login" />
-            </a>
+            </Link>
           </ul>
         </div>
       </header>
