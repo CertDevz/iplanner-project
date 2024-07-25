@@ -38,8 +38,8 @@ export const dados = [
   {
     funcionalidade: "Monitoramento de presença",
     descricao: "Controle de entrada e saída dos participantes",
-    limitacao: "Incluído",
-    custo: "Grátis",
+    limitacao: "Verificar Disponibilidade",
+    custo: "A consultar",
   },
   {
     funcionalidade: "Ferramenta de sorteios",
