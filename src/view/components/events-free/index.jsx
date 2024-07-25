@@ -31,7 +31,7 @@ export default function EventsCardsSection() {
           ]}
         />
       </div>
-      <img
+      <img loading="lazy"
         src="/enfermeira-cirurgia.png"
         alt=""
         className="max-w-[700px] hidden xl:block object-contain md:mt-40"

@@ -99,7 +99,7 @@ const ContactForm = () => {
           </button>
         </form>
       </div>
-      <img
+      <img loading="lazy"
         src="/enfermeiro3.png"
         alt=""
         className="max-w-[650px] hidden lg:block"

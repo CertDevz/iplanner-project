@@ -26,7 +26,7 @@ export default function VisionSection() {
         </motion.p>
       </div>
       <div>
-        <img
+        <img loading="lazy"
           src="/enfermeira.png"
           alt=""
           className="hidden xl:block h-screen object-cover "

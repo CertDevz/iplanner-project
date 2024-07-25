@@ -13,7 +13,7 @@ export default function WhoWeAreSection() {
             <h2 className=" text-xl font-semibold">Profissionais da Saúde:</h2>
             <ul className="mt-5 max-w-[90%] mx-auto flex flex-col gap-7">
               <li className="flex gap-2  md:text-xl text-lg items-start mt-2">
-                <img src="/vector.svg" width={17} className="mt-1" />
+                <img loading="lazy" src="/vector.svg" width={17} className="mt-1" />
                 <p className="tracking-wide text-xl">
                   Mantemos você sempre atualizado com os últimos avanços e
                   conhecimentos, garantindo que você esteja pronto para
@@ -28,7 +28,7 @@ export default function WhoWeAreSection() {
             </h2>
             <ul className="mt-5 max-w-[90%] mx-auto flex flex-col gap-7">
               <li className="flex gap-2  md:text-xl text-lg items-start mt-2">
-                <img src="/vector.svg" width={17} className="mt-1" />
+                <img loading="lazy" src="/vector.svg" width={17} className="mt-1" />
                 <p className="tracking-wide text-xl">
                   Oferecemos recursos que preparam você para os desafios do
                   mercado de trabalho e ajudam a destacar sua carreira acadêmica
@@ -40,7 +40,7 @@ export default function WhoWeAreSection() {
             </ul>
           </div>
         </div>
-        <img
+        <img loading="lazy"
           src="/enfermeira2.png"
           alt=""
           className="hidden xl:block h-screen object-cover  "

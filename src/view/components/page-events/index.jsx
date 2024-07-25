@@ -88,7 +88,7 @@ export default function PageEvents() {
   return (
     <div>
       <div className="mb-10">
-        <img
+        <img loading="lazy"
           src={event.backgroundImage}
           alt="banner do evento"
           className="w-full filter brightness-75"
@@ -194,7 +194,7 @@ export default function PageEvents() {
               {event.speaker &&
                 event.speaker.map((speaker, index) => (
                   <li className="flex items-center mt-5" key={index}>
-                    <img
+                    <img loading="lazy"
                       className="w-10 h-10 rounded-full"
                       src={speaker.avatar}
                       alt="Rounded avatar"

@@ -3,7 +3,7 @@ export default function IdeaSection() {
     <div className="flex flex-col md:flex-row justify-between md:gap-40 mt-10 mb-10 md:mb-0 md:mt-0 md:h-screen">
       <div className="flex flex-col items-center justify-center  md:mb-0">
         <div className="flex flex-col md:flex-row items-center gap-10 justify-center">
-          <img
+          <img loading="lazy"
             src="/light.png"
             alt="light"
             className="md:w-[140px] w-[200px]"
@@ -30,7 +30,7 @@ export default function IdeaSection() {
           </p>
         </div>
       </div>
-      <img
+      <img loading="lazy"
         src="/medica-ideia.png"
         alt="medica"
         className="hidden md:block max-w-[600px]"

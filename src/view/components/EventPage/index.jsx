@@ -2,7 +2,7 @@ export default function Events() {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2s lg:grid-cols-4 gap-6 max-w-7xl mx-auto px-4 py-36">
       <div className=" relative overflow-hidden rounded-lg shadow-xl transform hover:scale-105 transition-transform duration-500">
-        <img
+        <img loading="lazy"
           src="/events/event1.jpg"
           alt="Foto 1"
           className="object-cover w-full h-full"
@@ -11,7 +11,7 @@ export default function Events() {
       </div>
 
       <div className="relative overflow-hidden rounded-lg shadow-xl transform hover:scale-105 transition-transform duration-500">
-        <img
+        <img loading="lazy"
           src="/events/event2.jpg"
           alt="Foto 2"
           className="object-cover w-full h-full"
@@ -20,7 +20,7 @@ export default function Events() {
       </div>
 
       <div className="relative overflow-hidden rounded-lg shadow-xl transform hover:scale-105 transition-transform duration-500">
-        <img
+        <img loading="lazy"
           src="/events/event3.jpg"
           alt="Foto 3"
           className="object-cover w-full h-full"
@@ -29,7 +29,7 @@ export default function Events() {
       </div>
 
       <div className="relative overflow-hidden rounded-lg shadow-xl transform hover:scale-105 transition-transform duration-500">
-        <img
+        <img loading="lazy"
           src="/events/event4.jpg"
           alt="Foto 4"
           className="object-cover w-full h-full"

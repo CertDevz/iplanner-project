@@ -8,7 +8,7 @@ const Section = ({ imgSrc, alt, title, description }) => {
 
   return (
     <div className="flex items-center gap-5 mt-10">
-      <img src={imgSrc} alt={alt} width={70} />
+      <img loading="lazy" src={imgSrc} alt={alt} width={70} />
       <motion.p
         ref={ref2}
         className="text-white md:text-xl tracking-wide"
@@ -31,7 +31,7 @@ export default function EventManagementSection() {
           "linear-gradient(to bottom right, #7c3aed 20%, #3d44c7 100%)",
       }}
     >
-      <img src="/enfermeiro2.png" alt="" className="hidden md:block" />
+      <img loading="lazy" src="/enfermeiro2.png" alt="" className="hidden md:block" />
       <div className="flex flex-col max-w-[900px] mx-auto md:mt-10 items-center mb-10">
         <h1 className="font-semibold px-5 py-2 bg-[#db2777] rounded-sm text-white text-center md:text-3xl text-2xl -mt-2 md:mt-0">
           Serviço de Gestão de Eventos Completo para a{" "}

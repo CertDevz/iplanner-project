@@ -73,7 +73,7 @@ const CarouselCourses = () => {
             className="flex items-center gap-5 px-2 max-w-[600px] h-[350px]"
           >
             <div className="bg-white rounded-lg overflow-hidden shadow-md h-full">
-              <img
+              <img loading="lazy"
                 src={course.image}
                 alt={course.title}
                 className="w-full h-56 object-cover"

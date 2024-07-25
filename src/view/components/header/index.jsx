@@ -53,7 +53,7 @@ function Header() {
       >
         <div className="flex items-center gap-10">
           <Link to="/" onClick={() => handleSectionClick("home")}>
-            <img src="/icon.svg" alt="logo" width={45} />
+            <img loading="lazy" src="/icon.svg" alt="logo" width={45} />
           </Link>
 
           <nav

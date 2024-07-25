@@ -81,35 +81,35 @@ export default function AboutUsSection() {
           </h2>
           <ul className="max-w-[90%] mx-auto mt-5 flex flex-col gap-5">
             <li className="flex items-start gap-2 tracking-wide bg-gradient-to-br from-purple-800 to-indigo-500 text-transparent bg-clip-text font-bold">
-              <img src="/public/vector.svg" alt="" width={15} />
+              <img loading="lazy" src="/public/vector.svg" alt="" width={15} />
               Acessibilidade: Compromisso em tornar a educação de qualidade
               acessível a todos, independentemente de localização ou situação
               financeira
             </li>
             <li className="flex items-start gap-2 tracking-wide bg-gradient-to-br from-purple-800 to-indigo-500 text-transparent bg-clip-text font-bold">
-              <img src="/public/vector.svg" alt="" width={15} />
+              <img loading="lazy" src="/public/vector.svg" alt="" width={15} />
               Inovação: Promoção de uma cultura de inovação contínua, buscando
               sempre novas formas de ensinar e aprender.
             </li>
             <li className="flex items-start gap-2 tracking-wide bg-gradient-to-br from-purple-800 to-indigo-500 text-transparent bg-clip-text font-bold">
-              <img src="/public/vector.svg" alt="" width={15} />
+              <img loading="lazy" src="/public/vector.svg" alt="" width={15} />
               Excelência: Dedicação à excelência em todos os aspectos, desde o
               conteúdo oferecido até o suporte ao usuário.
             </li>
             <li className="flex items-start gap-2 tracking-wide bg-gradient-to-br from-purple-800 to-indigo-500 text-transparent bg-clip-text font-bold">
-              <img src="/public/vector.svg" alt="" width={15} />
+              <img loading="lazy" src="/public/vector.svg" alt="" width={15} />
               Colaboração: Valorização do trabalho em equipe e da colaboração
               entre profissionais, acadêmicos e instituições para alcançar
               objetivos comuns.
             </li>
             <li className="flex items-start gap-2 tracking-wide bg-gradient-to-br from-purple-800 to-indigo-500 text-transparent bg-clip-text font-bold">
-              <img src="/public/vector.svg" alt="" width={15} />
+              <img loading="lazy" src="/public/vector.svg" alt="" width={15} />
               Atualização Contínua: Encorajamento ao aprendizado contínuo e à
               atualização constante de conhecimentos para se manter à frente das
               mudanças e avanços na área da saúde.
             </li>
             <li className="flex items-start gap-2 tracking-wide bg-gradient-to-br from-purple-800 to-indigo-500 text-transparent bg-clip-text font-bold mb-10">
-              <img src="/public/vector.svg" alt="" width={15} />
+              <img loading="lazy" src="/public/vector.svg" alt="" width={15} />
               Integridade: Compromisso com a ética, transparência e honestidade
               em todas as nossas ações e interações.
             </li>
