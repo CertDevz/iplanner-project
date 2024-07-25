@@ -7,10 +7,18 @@ import { api } from "../../../api";
 
 const CarouselCourses = () => {
   const [cursos, setCursos] = useState([]);
+
   useEffect(() => {
     const request = async () => {
       const { data: response } = await api.get("/cursos");
-      setCursos([...courses, ...response]);
+
+      const existingIds = new Set(courses.map((course) => course.id));
+
+      const newCourses = response.filter(
+        (course) => !existingIds.has(course.id)
+      );
+
+      setCursos([...courses, ...newCourses]);
     };
 
     request();
@@ -51,6 +59,7 @@ const CarouselCourses = () => {
 
   return (
     <div
+      id="events"
       className="w-full md:p-10 p-5"
       style={{
         background:
@@ -61,7 +70,7 @@ const CarouselCourses = () => {
         {cursos.map((course, index) => (
           <div
             key={index}
-            className=" flex items-center gap-5 px-2 max-w-[600px] h-[350px]"
+            className="flex items-center gap-5 px-2 max-w-[600px] h-[350px]"
           >
             <div className="bg-white rounded-lg overflow-hidden shadow-md h-full">
               <img
@@ -70,7 +79,7 @@ const CarouselCourses = () => {
                 className="w-full h-56 object-cover"
               />
               <div className="p-4">
-                <a href={`/evento/${course.id}/informacoes`}>
+                <a href={`/evento/${course.id}/informacoes`} target="_blank">
                   <h3 className="text-lg font-semibold mb-2 max-w-[400px]">
                     {course.title}
                   </h3>
