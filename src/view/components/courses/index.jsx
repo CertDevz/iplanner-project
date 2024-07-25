@@ -79,7 +79,7 @@ const CarouselCourses = () => {
                 className="w-full h-56 object-cover"
               />
               <div className="p-4">
-                <a href={`/evento/${course.id}/informacoes`}>
+                <a href={`/evento/${course.id}/informacoes`} target="_blank">
                   <h3 className="text-lg font-semibold mb-2 max-w-[400px]">
                     {course.title}
                   </h3>
