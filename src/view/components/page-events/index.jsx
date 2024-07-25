@@ -1,14 +1,15 @@
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import { Calendar, MapPin } from "lucide-react";
-import { api } from "../../../api";
-import Footer from "../footer";
-import CourseInfo from "./components/courseInfo";
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import { Calendar, MapPin } from 'lucide-react';
+import { api } from '../../../api';
+import Footer from '../footer';
+import CourseInfo from './components/courseInfo';
+import axios from 'axios';
 
 export default function PageEvents() {
   const params = useParams();
   const [event, setEvent] = useState({});
-  const [formData, setFormData] = useState({ name: "", email: "" });
+  const [formData, setFormData] = useState({ name: '', email: '' });
   const [showPopup, setShowPopup] = useState(false);
 
   useEffect(() => {
@@ -20,7 +21,7 @@ export default function PageEvents() {
     find();
   }, [params.id]);
 
-  console.log("event: ", event);
+  console.log('event: ', event);
 
   // const counts = useStore((state) => state.counts);
   // const totalCount = Object.values(counts).reduce(
@@ -31,11 +32,11 @@ export default function PageEvents() {
   function dataAtualFormatada() {
     var data = new Date(),
       dia = data.getDate().toString(),
-      diaF = dia.length == 1 ? "0" + dia : dia,
+      diaF = dia.length == 1 ? '0' + dia : dia,
       mes = (data.getMonth() + 1).toString(),
-      mesF = mes.length == 1 ? "0" + mes : mes,
+      mesF = mes.length == 1 ? '0' + mes : mes,
       anoF = data.getFullYear();
-    return diaF + "/" + mesF + "/" + anoF;
+    return diaF + '/' + mesF + '/' + anoF;
   }
 
   const dataFormatada = dataAtualFormatada(event.date);
@@ -49,13 +50,12 @@ export default function PageEvents() {
     e.preventDefault();
 
     if (!validateEmail(formData.email)) {
-      alert("Por favor, insira um e-mail válido.");
+      alert('Por favor, insira um e-mail válido.');
       return;
     }
 
-    console.log("Backend status:", import.meta.env.VITE_BACKEND_AVAILABLE);
-    if (import.meta.env.VITE_BACKEND_AVAILABLE === "false") {
-      console.log("Backend not available, simulating response...");
+    if (import.meta.env.VITE_BACKEND_AVAILABLE === 'false') {
+      console.log('Backend not available, simulating response...');
       setShowPopup(true);
       return;
     }
@@ -66,21 +66,20 @@ export default function PageEvents() {
       date: event.date,
       hour: event.hour,
     };
-    console.log(emailFrom);
 
     try {
-      const response = await api.request({
-        url: "/send-mail",
-        method: "POST",
+      const { status } = await axios.post('http://localhost:3000/api/v1/mail', {
         data: emailFrom,
         headers: {
-          "Content-Type": "application/json",
+          'Content-Type': 'application/json',
         },
       });
-      console.log("Email sent:", response);
-      setShowPopup(true);
+
+      if(status === 200) {
+        setShowPopup(true);
+      }
     } catch (error) {
-      console.error("Error sending email:", error);
+      console.error('Error sending email:', error);
     }
   };
 
@@ -104,8 +103,8 @@ export default function PageEvents() {
               className="font-semibold cursor-pointer px-8 py-3 bg-[#db2777] rounded-sm text-white mt-5 hover:bg-[#a1255d]"
               onClick={() =>
                 document
-                  .getElementById("form-section")
-                  .scrollIntoView({ behavior: "smooth" })
+                  .getElementById('form-section')
+                  .scrollIntoView({ behavior: 'smooth' })
               }
             >
               Faça sua inscrição
@@ -117,7 +116,7 @@ export default function PageEvents() {
               className="flex flex-col md:flex-row items-center gap-5 rounded-md p-5 flex-1"
               style={{
                 background:
-                  "linear-gradient(to bottom right, #7c3aed 20%, #3d44c7 100%)",
+                  'linear-gradient(to bottom right, #7c3aed 20%, #3d44c7 100%)',
               }}
             >
               <div className="border-2 bg-gradient-to-r from-purple-800 to-indigo-500 p-2 rounded-full">
@@ -132,7 +131,7 @@ export default function PageEvents() {
               className="flex flex-col md:flex-row items-center gap-5 rounded-md p-5 flex-1"
               style={{
                 background:
-                  "linear-gradient(to bottom right, #7c3aed 20%, #3d44c7 100%)",
+                  'linear-gradient(to bottom right, #7c3aed 20%, #3d44c7 100%)',
               }}
             >
               <div className="border-2 p-2 rounded-full">
