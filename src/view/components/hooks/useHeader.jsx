@@ -31,12 +31,6 @@ export function useHeader() {
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
       closeMenu();
-      window.addEventListener('load', () => {
-        if (window.location.hash) {
-          const id = window.location.hash.substring(1);
-          scrollToSection(id);
-        }
-      });
     }
   };
 
@@ -67,6 +61,23 @@ export function useHeader() {
       document.body.classList.remove('no-scroll');
     }
   }, [isMenuOpenMobile]);
+
+  useEffect(() => {
+    const handleHashChange = () => {
+      if (window.location.hash) {
+        const id = window.location.hash.substring(1);
+        scrollToSection(id);
+      }
+    };
+
+    window.addEventListener('load', handleHashChange);
+    window.addEventListener('hashchange', handleHashChange);
+
+    return () => {
+      window.removeEventListener('load', handleHashChange);
+      window.removeEventListener('hashchange', handleHashChange);
+    };
+  }, []);
 
   return {
     redirectToExternalPage,

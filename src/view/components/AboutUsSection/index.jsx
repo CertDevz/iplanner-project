@@ -10,12 +10,9 @@ export default function AboutUsSection() {
       <br />
 
       <div className="flex max-w[90%] mx-auto mt-10">
-        <h1 className="font-semibold  px-20 py-2 bg-[#db2777] rounded-sm text-white  md:text-3xl text-2xl">
-          Quem somos
-        </h1>
       </div>
 
-      <div className="flex flex-col  mt-12 ">
+      <div className="flex flex-col">
         <div
           className="w-full"
           style={{

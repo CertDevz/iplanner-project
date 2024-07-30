@@ -6,6 +6,8 @@ import App from "./App";
 import PageEvents from "./view/components/page-events";
 import AboutUsSection from "./view/components/AboutUsSection";
 import UnderConstructionPage from "./view/components/UnderConstructionPage";
+import TermsOfUse from "./view/pages/termsOfUse";
+import PrivacyPolicy from "./view/pages/privacyPolicy";
 
 const router = createBrowserRouter([
   {
@@ -24,6 +26,14 @@ const router = createBrowserRouter([
     path: "/evento/:id/informacoes",
     element: <PageEvents />,
   },
+  {
+    path: '/termos-de-uso',
+    element: <TermsOfUse />
+  },
+  {
+    path: '/politica-de-privacidade',
+    element: <PrivacyPolicy />
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
