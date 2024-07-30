@@ -1,22 +1,24 @@
-import Contact from "./view/components/contact";
-import Footer from "./view/components/footer";
-import Header from "./view/components/header";
-import Home from "./view/components/home";
-import "./view/scrollbar.css";
+import Contact from './view/components/contact';
+import Footer from './view/components/footer';
+import Header from './view/components/header';
+import Home from './view/components/home';
+import './view/scrollbar.css';
+import './toast.css';
+import { ToastContainer } from 'react-toastify';
 
-import Tables from "./view/components/tables";
-import CarouselCourses from "./view/components/courses";
-import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
-import ScrollTop from "./view/components/scrollTop";
-import Dashboard from "./view/components/dashboard";
-import VisionSection from "./view/components/VisionSection";
-import ImpactSection from "./view/components/ImpactSection";
-import IdeaSection from "./view/components/IdeaSection";
-import EventManagementSection from "./view/components/EventManagementSection";
-import WhoWeAreSection from "./view/components/WhoWeAreSection";
-import EventsCardsSection from "./view/components/events-free";
-import Events from "./view/components/EventPage";
+import Tables from './view/components/tables';
+import CarouselCourses from './view/components/courses';
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+import ScrollTop from './view/components/scrollTop';
+import Dashboard from './view/components/dashboard';
+import VisionSection from './view/components/VisionSection';
+import ImpactSection from './view/components/ImpactSection';
+import IdeaSection from './view/components/IdeaSection';
+import EventManagementSection from './view/components/EventManagementSection';
+import WhoWeAreSection from './view/components/WhoWeAreSection';
+import EventsCardsSection from './view/components/events-free';
+import Events from './view/components/EventPage';
 
 function App() {
   const location = useLocation();
@@ -26,7 +28,7 @@ function App() {
       const element = document.getElementById(location.hash.substring(1));
       if (element) {
         setTimeout(() => {
-          element.scrollIntoView({ behavior: "smooth" });
+          element.scrollIntoView({ behavior: 'smooth' });
         }, 100);
       }
     }
@@ -50,6 +52,19 @@ function App() {
       <CarouselCourses />
       <Contact />
       <Footer />
+
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
     </div>
   );
 }

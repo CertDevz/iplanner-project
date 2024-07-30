@@ -4,7 +4,7 @@ import { Calendar, MapPin } from 'lucide-react';
 import { api } from '../../../api';
 import Footer from '../footer';
 import CourseInfo from './components/courseInfo';
-import axios from 'axios';
+import { toast } from 'react-toastify';
 
 export default function PageEvents() {
   const params = useParams();
@@ -14,20 +14,12 @@ export default function PageEvents() {
 
   useEffect(() => {
     const find = async () => {
-      const { data } = await api.get(`/curso/${params.id}`);
+      const { data } = await api.get(`/api/v1/${params.id}/list`);
       setEvent(data);
     };
 
     find();
   }, [params.id]);
-
-  console.log('event: ', event);
-
-  // const counts = useStore((state) => state.counts);
-  // const totalCount = Object.values(counts).reduce(
-  //   (acc, count) => acc + count,
-  //   0
-  // );
 
   function dataAtualFormatada() {
     var data = new Date(),
@@ -54,12 +46,6 @@ export default function PageEvents() {
       return;
     }
 
-    if (import.meta.env.VITE_BACKEND_AVAILABLE === 'false') {
-      console.log('Backend not available, simulating response...');
-      setShowPopup(true);
-      return;
-    }
-
     const emailFrom = {
       ...formData,
       eventId: params.id,
@@ -68,27 +54,48 @@ export default function PageEvents() {
     };
 
     try {
-      const { status } = await axios.post('http://localhost:3000/api/v1/mail', {
+      const { data, status } = await api.post('/api/v1/mail', {
         data: emailFrom,
         headers: {
           'Content-Type': 'application/json',
         },
       });
 
-      if(status === 200) {
-        setShowPopup(true);
-      }
+      toast.success(data.message || 'Inscrição realizada com sucesso!');
     } catch (error) {
-      console.error('Error sending email:', error);
+      if (error.response) {
+        if (error.response.status === 400) {
+          toast.warn(
+            error.response.data.message ||
+              'Você já está cadastrado neste evento.'
+          );
+        } else {
+          toast.error(error.response.data.message || 'Erro desconhecido');
+        }
+      } else {
+        toast.error(
+          'Erro ao enviar a solicitação. Tente novamente mais tarde.'
+        );
+      }
+    } finally {
+      setShowPopup(true);
     }
   };
 
   const localData = event.local ? JSON.parse(event.local) : null;
 
+  const limitInscriptionsEvent = event.limitInscriptions || 0;
+  const inscriptionEvent = event.inscription || 0;
+
+  const isInscriptionValid = inscriptionEvent < limitInscriptionsEvent;
+
+  console.log(isInscriptionValid);
+
   return (
     <div>
       <div className="mb-10">
-        <img loading="lazy"
+        <img
+          loading="lazy"
           src={event.backgroundImage}
           alt="banner do evento"
           className="w-full filter brightness-75"
@@ -177,7 +184,7 @@ export default function PageEvents() {
                 Não se esqueça! Ao se inscrever, você terá direito a uma única
                 palestra avulsa!
               </span>
-              <p className="md:text-lg text-sm mt-10 text-purple-600 p-5 shadow-2xl">
+              <p className="md:text-lg text-sm mt-10 text-purple-600 p-5 shadow-2xl bg-white rounded-lg">
                 {event.descriptionEvent ? (
                   <CourseInfo descriptionEvent={event.descriptionEvent} />
                 ) : (
@@ -194,7 +201,8 @@ export default function PageEvents() {
               {event.speaker &&
                 event.speaker.map((speaker, index) => (
                   <li className="flex items-center mt-5" key={index}>
-                    <img loading="lazy"
+                    <img
+                      loading="lazy"
                       className="w-10 h-10 rounded-full"
                       src={speaker.avatar}
                       alt="Rounded avatar"
@@ -207,100 +215,58 @@ export default function PageEvents() {
             </div>
           </div>
 
-          {/* <div
-            className="flex flex-col gap-7 justify-center mt-20 bg-white shadow-lg p-6 rounded-md pb-20"
-            style={{
-              backgroundColor: "rgb(243, 243, 243)",
-              boxShadow: "0 4px 8px rgba(0, 0, 0, 0.3)",
-            }}
-          >
-            <EventCard
-              id="palestra1"
-              title="PALESTRA 1 - INCLUSÃO NO TEA: A PERSPECTIVA DE UM AUTISTA (GUILHERME DE ALMEIDA)"
-              price={90}
-            />
-
-            <EventCard
-              id="palestra2"
-              title="PALESTRA 2 - O PREJUÍZO DO USO EXCESSIVO DE TELAS (CECÍLIA ANTIPOFF)"
-              price={80}
-            />
-
-            <EventCard
-              id="palestra3"
-              title="PALESTRA 3 - AS DIFERENÇAS NO CÉREBRO DE QUEM TEM AUTISMO E TDAH (DR. MARCONE DE SOUZA OLIVEIRA)"
-              price={80}
-            />
-            <CouponSection />
-          </div> */}
-
-          <div className="text-center mt-10">
-            {/* <h1 className="bg-gradient-to-br from-purple-800 to-indigo-500 text-transparent bg-clip-text font-bold md:text-2xl text-lg ">
-              Valor da sua compra: R$ {totalCount * 80}
-            </h1> */}
-          </div>
-
           <div className="mt-10">
-            <div className="bg-white p-5 shadow-md rounded-lg mt-10">
-              <h2 className="text-center text-2xl text-purple-800 font-bold">
-                Inscreva-se Agora!
-              </h2>
-              <form
-                className="flex flex-col gap-5 mt-10"
-                id="form-section"
-                onSubmit={handleSubmit}
-              >
-                <input
-                  type="text"
-                  placeholder="Nome completo"
-                  className="p-3 rounded-lg border-2 border-purple-500"
-                  value={formData.name}
-                  onChange={(e) =>
-                    setFormData({ ...formData, name: e.target.value })
-                  }
-                />
-                <input
-                  type="email"
-                  placeholder="Seu e-mail"
-                  className="p-3 rounded-lg border-2 border-purple-500"
-                  value={formData.email}
-                  onChange={(e) =>
-                    setFormData({ ...formData, email: e.target.value })
-                  }
-                />
-                <button
-                  type="submit"
-                  className="font-semibold cursor-pointer px-8 py-3 bg-[#db2777] rounded-sm text-white mt-5 hover:bg-[#a1255d]"
+            {isInscriptionValid === false ? (
+              <div className="bg-white p-5 shadow-md rounded-lg mt-10">
+                <h2 className="text-center text-2xl text-purple-800 font-bold">
+                  Inscreva-se Agora!
+                </h2>
+                <form
+                  className="flex flex-col gap-5 mt-10"
+                  id="form-section"
+                  onSubmit={handleSubmit}
                 >
-                  CONTINUAR
-                </button>
-              </form>
-            </div>
+                  <input
+                    type="text"
+                    placeholder="Nome completo"
+                    className="p-3 rounded-lg border-2 border-purple-500"
+                    value={formData.name}
+                    onChange={(e) =>
+                      setFormData({ ...formData, name: e.target.value })
+                    }
+                  />
+                  <input
+                    type="email"
+                    placeholder="Seu e-mail"
+                    className="p-3 rounded-lg border-2 border-purple-500"
+                    value={formData.email}
+                    onChange={(e) =>
+                      setFormData({ ...formData, email: e.target.value })
+                    }
+                  />
+                  <button
+                    type="submit"
+                    className="font-semibold cursor-pointer px-8 py-3 bg-[#db2777] rounded-sm text-white mt-5 hover:bg-[#a1255d]"
+                  >
+                    Inscrever-se
+                  </button>
+                </form>
+              </div>
+            ) : (
+              <div className="bg-white p-5 shadow-md rounded-lg mt-10">
+                <h2 className="text-center text-2xl text-purple-800 font-bold">
+                  Inscrições Encerradas
+                </h2>
+                <p className="text-center mt-5">
+                  O limite de inscrições para este evento foi alcançado. Não
+                  podemos aceitar mais inscrições.
+                </p>
+              </div>
+            )}
           </div>
         </div>
       </div>
-
       <Footer />
-
-      {showPopup && (
-        <div className="fixed inset-0 flex items-center justify-center bg-gray-700 bg-opacity-50">
-          <div className="bg-white p-6 rounded-lg shadow-lg max-w-sm w-full">
-            <h2 className="text-lg text-purple-950 font-semibold mb-4">
-              Formulário Enviado!
-            </h2>
-            <p className="text-purple-700">
-              As instruções de confirmação de incrição foram enviadas por
-              e-mail.
-            </p>
-            <button
-              onClick={() => setShowPopup(false)}
-              className="mt-4 px-4 py-2 bg-purple-800 text-white rounded"
-            >
-              Fechar
-            </button>
-          </div>
-        </div>
-      )}
     </div>
   );
 }

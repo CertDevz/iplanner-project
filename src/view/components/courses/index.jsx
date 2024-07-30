@@ -1,27 +1,33 @@
-import { useState, useEffect } from "react";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import { courses } from "./mock";
-import { api } from "../../../api";
+import { useState, useEffect, useRef } from 'react';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import { courses } from './mock';
+import { api } from '../../../api';
 
 const CarouselCourses = () => {
   const [cursos, setCursos] = useState([]);
+  const loaded = useRef(false);
 
   useEffect(() => {
     const request = async () => {
-      const { data: response } = await api.get("/cursos");
+      const { data: response } = await api.get('/api/v1/events');
+
+      console.log(response);
 
       const existingIds = new Set(courses.map((course) => course.id));
-
       const newCourses = response.filter(
         (course) => !existingIds.has(course.id)
       );
 
-      setCursos([...courses, ...newCourses]);
+      setCursos((prevCursos) => [...prevCursos, ...newCourses]);
     };
 
-    request();
+    if (!loaded.current) {
+      request().then(() => {
+        loaded.current = true;
+      });
+    }
   }, []);
 
   const settings = {
@@ -63,7 +69,7 @@ const CarouselCourses = () => {
       className="w-full md:p-10 p-5"
       style={{
         background:
-          "linear-gradient(to bottom right, #7c3aed 20%, #3d44c7 100%)",
+          'linear-gradient(to bottom right, #7c3aed 20%, #3d44c7 100%)',
       }}
     >
       <Slider {...settings}>
@@ -73,8 +79,9 @@ const CarouselCourses = () => {
             className="flex items-center gap-5 px-2 max-w-[600px] h-[350px]"
           >
             <div className="bg-white rounded-lg overflow-hidden shadow-md h-full">
-              <img loading="lazy"
-                src={course.image}
+              <img
+                loading="lazy"
+                src={course.backgroundImage}
                 alt={course.title}
                 className="w-full h-56 object-cover"
               />
